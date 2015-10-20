@@ -19,10 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.qq.com"]];
     [self.view addSubview: _webView];
     //缩进
-    _webView.scalesPageToFit = YES;
     [_webView loadRequest:request];
 
     
