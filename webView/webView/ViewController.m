@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"123");
     _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.qq.com"]];
     [self.view addSubview: _webView];
