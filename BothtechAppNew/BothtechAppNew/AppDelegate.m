@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "BTHomeCollectionViewController.h"
+#import "BTNavigationController.h"
+
 
 @interface AppDelegate ()
 
@@ -16,7 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] init];
+    self.window.frame = [UIScreen mainScreen].bounds;
+    self.window.rootViewController = [[BTNavigationController alloc]initWithRootViewController:[[BTHomeCollectionViewController alloc]init]];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

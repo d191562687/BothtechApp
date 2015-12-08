@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayNDropViewController">
+            <connections>
+                <outlet property="view" destination="p5C-Cf-FgV" id="zAb-10-V5U"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="PlayNDropViewController" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="319" height="467"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p5C-Cf-FgV" customClass="CCMPlayNDropView">
+                    <rect key="frame" x="0.0" y="-6" width="319" height="473"/>
+                    <color key="backgroundColor" red="0.8648004064" green="0.40952592300000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="mVx-zd-LPG"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.48235297199999999" green="0.90196084980000002" blue="0.047058828179999998" alpha="1" colorSpace="deviceRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="PlayNDropViewController">
+                <bool key="isElement" value="NO"/>
+            </accessibility>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="303.5" y="383.5"/>
+        </view>
+    </objects>
+</document>

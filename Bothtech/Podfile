@@ -1,0 +1,10 @@
+# platform :ios, '6.0'
+
+pod "AFNetworking"
+pod 'XHRealTimeBlur'
+pod 'pop'
+pod 'MaryPopin'
+pod 'MJPhotoBrowser'
+pod 'MBProgressHUD'
+pod 'SDWebImage'
+pod 'BaiduMapKit' #百度地图SDK

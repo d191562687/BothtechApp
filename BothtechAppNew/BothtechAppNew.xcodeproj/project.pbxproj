@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2937585C1BF083C90050A31A /* BTHomeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2937585B1BF083C90050A31A /* BTHomeCollectionViewController.m */; };
+		2937585F1BF091940050A31A /* BTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2937585E1BF091940050A31A /* BTNavigationController.m */; };
+		293758621BF09CA70050A31A /* BTConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 293758611BF09CA70050A31A /* BTConst.m */; };
 		29C658D61BE1B96200C4B8D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C658D51BE1B96200C4B8D0 /* main.m */; };
 		29C658D91BE1B96200C4B8D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C658D81BE1B96200C4B8D0 /* AppDelegate.m */; };
 		29C658DC1BE1B96200C4B8D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C658DB1BE1B96200C4B8D0 /* ViewController.m */; };
-		29C658DF1BE1B96200C4B8D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C658DD1BE1B96200C4B8D0 /* Main.storyboard */; };
 		29C658E11BE1B96200C4B8D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C658E01BE1B96200C4B8D0 /* Assets.xcassets */; };
-		29C658E41BE1B96200C4B8D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C658E21BE1B96200C4B8D0 /* LaunchScreen.storyboard */; };
 		29C658EF1BE1B96200C4B8D0 /* BothtechAppNewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C658EE1BE1B96200C4B8D0 /* BothtechAppNewTests.m */; };
 		29C658FA1BE1B96200C4B8D0 /* BothtechAppNewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C658F91BE1B96200C4B8D0 /* BothtechAppNewUITests.m */; };
 /* End PBXBuildFile section */
@@ -35,15 +36,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2937585A1BF083C90050A31A /* BTHomeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHomeCollectionViewController.h; sourceTree = "<group>"; };
+		2937585B1BF083C90050A31A /* BTHomeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTHomeCollectionViewController.m; sourceTree = "<group>"; };
+		2937585D1BF091940050A31A /* BTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNavigationController.h; sourceTree = "<group>"; };
+		2937585E1BF091940050A31A /* BTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNavigationController.m; sourceTree = "<group>"; };
+		293758601BF09CA70050A31A /* BTConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTConst.h; sourceTree = "<group>"; };
+		293758611BF09CA70050A31A /* BTConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTConst.m; sourceTree = "<group>"; };
 		29C658D11BE1B96200C4B8D0 /* BothtechAppNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BothtechAppNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C658D51BE1B96200C4B8D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29C658D71BE1B96200C4B8D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		29C658D81BE1B96200C4B8D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		29C658DA1BE1B96200C4B8D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		29C658DB1BE1B96200C4B8D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		29C658DE1BE1B96200C4B8D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29C658E01BE1B96200C4B8D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		29C658E31BE1B96200C4B8D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29C658E51BE1B96200C4B8D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C658EA1BE1B96200C4B8D0 /* BothtechAppNewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BothtechAppNewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C658EE1BE1B96200C4B8D0 /* BothtechAppNewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BothtechAppNewTests.m; sourceTree = "<group>"; };
@@ -78,6 +83,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2984A5E41BEB5DBC00E8FC1A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2984A5E51BEB5DBC00E8FC1A /* Category */,
+				2984A5E61BEB5DBC00E8FC1A /* Controller */,
+				2984A5E71BEB5DBC00E8FC1A /* Lib */,
+				2984A5E81BEB5DBC00E8FC1A /* Other */,
+				2937585D1BF091940050A31A /* BTNavigationController.h */,
+				2937585E1BF091940050A31A /* BTNavigationController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2984A5E51BEB5DBC00E8FC1A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		2984A5E61BEB5DBC00E8FC1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2984A5E71BEB5DBC00E8FC1A /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		2984A5E81BEB5DBC00E8FC1A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2984A5E91BEB602200E8FC1A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2937585A1BF083C90050A31A /* BTHomeCollectionViewController.h */,
+				2937585B1BF083C90050A31A /* BTHomeCollectionViewController.m */,
+			);
+			name = Home;
+			path = Main/Home;
+			sourceTree = "<group>";
+		};
+		2984A5EA1BEB604500E8FC1A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2984A5EB1BEB604500E8FC1A /* Images */,
+				2984A5EC1BEB604500E8FC1A /* Plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2984A5EB1BEB604500E8FC1A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		2984A5EC1BEB604500E8FC1A /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		2984A5ED1BEB604900E8FC1A /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		2984A5EE1BEB604E00E8FC1A /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				2984A5EF1BEB604E00E8FC1A /* Category */,
+				2984A5F01BEB604E00E8FC1A /* DataBase */,
+				2984A5F11BEB604E00E8FC1A /* Network */,
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		2984A5EF1BEB604E00E8FC1A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		2984A5F01BEB604E00E8FC1A /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		2984A5F11BEB604E00E8FC1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		29C658C81BE1B96200C4B8D0 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +218,17 @@
 		29C658D31BE1B96200C4B8D0 /* BothtechAppNew */ = {
 			isa = PBXGroup;
 			children = (
+				2984A5EE1BEB604E00E8FC1A /* Expand */,
+				2984A5ED1BEB604900E8FC1A /* Vender */,
+				2984A5EA1BEB604500E8FC1A /* Resource */,
+				2984A5E91BEB602200E8FC1A /* Home */,
+				2984A5E41BEB5DBC00E8FC1A /* Main */,
 				29C658D71BE1B96200C4B8D0 /* AppDelegate.h */,
+				293758601BF09CA70050A31A /* BTConst.h */,
+				293758611BF09CA70050A31A /* BTConst.m */,
 				29C658D81BE1B96200C4B8D0 /* AppDelegate.m */,
 				29C658DA1BE1B96200C4B8D0 /* ViewController.h */,
 				29C658DB1BE1B96200C4B8D0 /* ViewController.m */,
-				29C658DD1BE1B96200C4B8D0 /* Main.storyboard */,
-				29C658E01BE1B96200C4B8D0 /* Assets.xcassets */,
-				29C658E21BE1B96200C4B8D0 /* LaunchScreen.storyboard */,
-				29C658E51BE1B96200C4B8D0 /* Info.plist */,
 				29C658D41BE1B96200C4B8D0 /* Supporting Files */,
 			);
 			path = BothtechAppNew;
@@ -117,6 +237,8 @@
 		29C658D41BE1B96200C4B8D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29C658E01BE1B96200C4B8D0 /* Assets.xcassets */,
+				29C658E51BE1B96200C4B8D0 /* Info.plist */,
 				29C658D51BE1B96200C4B8D0 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -202,6 +324,7 @@
 		29C658C91BE1B96200C4B8D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BT;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = bothtech;
 				TargetAttributes = {
@@ -243,9 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29C658E41BE1B96200C4B8D0 /* LaunchScreen.storyboard in Resources */,
 				29C658E11BE1B96200C4B8D0 /* Assets.xcassets in Resources */,
-				29C658DF1BE1B96200C4B8D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +392,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C658DC1BE1B96200C4B8D0 /* ViewController.m in Sources */,
+				293758621BF09CA70050A31A /* BTConst.m in Sources */,
 				29C658D91BE1B96200C4B8D0 /* AppDelegate.m in Sources */,
+				2937585C1BF083C90050A31A /* BTHomeCollectionViewController.m in Sources */,
+				2937585F1BF091940050A31A /* BTNavigationController.m in Sources */,
 				29C658D61BE1B96200C4B8D0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,25 +430,6 @@
 			targetProxy = 29C658F61BE1B96200C4B8D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		29C658DD1BE1B96200C4B8D0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29C658DE1BE1B96200C4B8D0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		29C658E21BE1B96200C4B8D0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29C658E31BE1B96200C4B8D0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		29C658FC1BE1B96200C4B8D0 /* Debug */ = {
@@ -413,11 +518,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BothtechAppNew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BothtechAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -425,11 +532,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BothtechAppNew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BothtechAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -500,6 +609,7 @@
 				29C659001BE1B96200C4B8D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29C659011BE1B96200C4B8D0 /* Build configuration list for PBXNativeTarget "BothtechAppNewTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +618,7 @@
 				29C659031BE1B96200C4B8D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29C659041BE1B96200C4B8D0 /* Build configuration list for PBXNativeTarget "BothtechAppNewUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +627,7 @@
 				29C659061BE1B96200C4B8D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
