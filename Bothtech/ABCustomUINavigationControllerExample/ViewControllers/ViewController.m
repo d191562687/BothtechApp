@@ -11,6 +11,7 @@
 #import "ThirthViewController.h"
 #import "FlipSquaresNavigationController.h"
 #import "BMKMapViewController.h"
+#import "H5SecondViewController.h"
 
 
 #import "PopMenu.h"
@@ -146,6 +147,11 @@
         if ([selectedItem.title  isEqual: @"Map"]) {
             BMKMapViewController * mapVC = [[BMKMapViewController alloc] initViewController];
             [self.navigationController pushViewController:mapVC animated:YES];
+        }
+        
+        if ([selectedItem.title  isEqual: @"H5"]) {
+            H5SecondViewController * H5 = [[H5SecondViewController alloc] initViewController];
+            [self.navigationController pushViewController:H5 animated:YES];
         }
 
         
