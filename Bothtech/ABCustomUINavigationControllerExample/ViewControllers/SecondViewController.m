@@ -264,7 +264,7 @@
 - (MMGridViewCell *)gridView:(MMGridView *)gridView cellAtIndex:(NSUInteger)index
 {
     MMGridViewDefaultCell *cell = [[MMGridViewDefaultCell alloc] initWithFrame:CGRectNull];
-    cell.textLabel.text = [NSString stringWithFormat:@"Cell %d", index];
+    cell.textLabel.text = [NSString stringWithFormat:@"Cell %lu", (unsigned long)index];
     cell.imageView.image = [UIImage imageNamed:@"cell-image.png"];
     
     return cell;
@@ -288,7 +288,7 @@
 - (void)gridView:(MMGridView *)gridView didDoubleTapCell:(MMGridViewCell *)cell atIndex:(NSUInteger)index
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:[NSString stringWithFormat:@"Cell at index %d was double tapped.", index]
+                                                    message:[NSString stringWithFormat:@"Cell at index %lu was double tapped.", (unsigned long)index]
                                                    delegate:nil
                                           cancelButtonTitle:@"Cool!"
                                           otherButtonTitles:nil];
@@ -315,10 +315,12 @@
     return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskAll;
-}
+
+
+//-(NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskAll;
+//}
 
 - (IBAction)popViewController:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

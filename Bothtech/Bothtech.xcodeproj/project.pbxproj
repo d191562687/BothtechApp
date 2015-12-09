@@ -12,6 +12,7 @@
 		290A14B11C0D6CE100C68EB9 /* MMGridViewDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A14AE1C0D6CE100C68EB9 /* MMGridViewDefaultCell.m */; };
 		290A14B41C0D6EAF00C68EB9 /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 290A14B21C0D6EAF00C68EB9 /* cell-image.png */; };
 		290A14B51C0D6EAF00C68EB9 /* cell-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 290A14B31C0D6EAF00C68EB9 /* cell-image@2x.png */; };
+		295C81CC1C16CF5C00D71CC4 /* guzhang.gif in Resources */ = {isa = PBXBuildFile; fileRef = 295C81CB1C16CF5C00D71CC4 /* guzhang.gif */; };
 		296C94021C10170F00232AD8 /* CCMBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296C93FF1C10170F00232AD8 /* CCMBorderView.m */; };
 		296C94031C10170F00232AD8 /* PlayNDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296C94011C10170F00232AD8 /* PlayNDropViewController.m */; };
 		296C94061C1017D500232AD8 /* CCMPlayNDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296C94051C1017D500232AD8 /* CCMPlayNDropView.m */; };
@@ -82,7 +83,6 @@
 		3CCCEB1A17B4E0F800750A12 /* ThirthViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0417B4E0F800750A12 /* ThirthViewController_iPhone.xib */; };
 		3CCCEB1B17B4E0F800750A12 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0517B4E0F800750A12 /* ViewController_iPad.xib */; };
 		3CCCEB1C17B4E0F800750A12 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB0617B4E0F800750A12 /* ViewController_iPhone.xib */; };
-		3CCCEB2017B4E29700750A12 /* ABCustomUINavigationController-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CCCEB1F17B4E29700750A12 /* ABCustomUINavigationController-Info.plist */; };
 		3CF16BB617930123006E912F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB517930123006E912F /* UIKit.framework */; };
 		3CF16BB817930123006E912F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB717930123006E912F /* Foundation.framework */; };
 		3CF16BBA17930123006E912F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF16BB917930123006E912F /* CoreGraphics.framework */; };
@@ -100,6 +100,7 @@
 		290A14AE1C0D6CE100C68EB9 /* MMGridViewDefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGridViewDefaultCell.m; sourceTree = "<group>"; };
 		290A14B21C0D6EAF00C68EB9 /* cell-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-image.png"; sourceTree = "<group>"; };
 		290A14B31C0D6EAF00C68EB9 /* cell-image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-image@2x.png"; sourceTree = "<group>"; };
+		295C81CB1C16CF5C00D71CC4 /* guzhang.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = guzhang.gif; sourceTree = "<group>"; };
 		296C93FE1C10170F00232AD8 /* CCMBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMBorderView.h; sourceTree = "<group>"; };
 		296C93FF1C10170F00232AD8 /* CCMBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMBorderView.m; sourceTree = "<group>"; };
 		296C94001C10170F00232AD8 /* PlayNDropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayNDropViewController.h; sourceTree = "<group>"; };
@@ -430,6 +431,7 @@
 		3CCCEAEC17B4E0F800750A12 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				295C81CB1C16CF5C00D71CC4 /* guzhang.gif */,
 				296CDE5B1C0EFEAC00D8F81A /* avatar@2x.png */,
 				290A14B21C0D6EAF00C68EB9 /* cell-image.png */,
 				290A14B31C0D6EAF00C68EB9 /* cell-image@2x.png */,
@@ -540,7 +542,7 @@
 		3CF16BAA17930123006E912F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Andrés Brun";
 				TargetAttributes = {
 					3CF16BB117930123006E912F = {
@@ -581,6 +583,7 @@
 				296CDE3E1C0EA14700D8F81A /* 13.jpg in Resources */,
 				296CDE421C0EA14700D8F81A /* 17.jpg in Resources */,
 				3CCCEB0A17B4E0F800750A12 /* bg_1_iPad.jpg in Resources */,
+				295C81CC1C16CF5C00D71CC4 /* guzhang.gif in Resources */,
 				3CCCEB0B17B4E0F800750A12 /* bg_2.jpg in Resources */,
 				3CCCEB0C17B4E0F800750A12 /* bg_2_iPad.jpg in Resources */,
 				296CDE3D1C0EA14700D8F81A /* 12.jpg in Resources */,
@@ -618,7 +621,6 @@
 				296CDE491C0EA14700D8F81A /* 24.jpg in Resources */,
 				3CCCEB1C17B4E0F800750A12 /* ViewController_iPhone.xib in Resources */,
 				296CDE331C0EA14700D8F81A /* 2.jpg in Resources */,
-				3CCCEB2017B4E29700750A12 /* ABCustomUINavigationController-Info.plist in Resources */,
 				296CDE4C1C0EA14700D8F81A /* 15.jpg in Resources */,
 				296CDE451C0EA14700D8F81A /* 20.jpg in Resources */,
 			);
@@ -736,6 +738,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Andres Moreno (GEKTAXUSVL)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -785,6 +788,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB96C31761F1D0C809F97F36 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -803,6 +808,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E09BEB9FB8927D29EC614778 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

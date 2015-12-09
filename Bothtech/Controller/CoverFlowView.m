@@ -184,7 +184,7 @@
    if (recognizer.state == UIGestureRecognizerStateChanged){
        //get offset
        CGPoint offset = [recognizer translationInView:recognizer.view];
-       if (abs(offset.x) > DISTNACE_TO_MAKE_MOVE_FOR_SWIPE) {
+       if (fabs(offset.x) > DISTNACE_TO_MAKE_MOVE_FOR_SWIPE) {
            BOOL isSwipingToLeftDirection = (offset.x > 0) ? NO :YES;
            [self moveOneStep:isSwipingToLeftDirection];
            [recognizer setTranslation:CGPointZero inView:recognizer.view];

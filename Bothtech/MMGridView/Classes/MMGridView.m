@@ -99,7 +99,7 @@
         NSInteger noOfRows = self.numberOfRows;
         NSUInteger cellsPerPage = self.numberOfColumns * self.numberOfRows;
         
-        BOOL isLandscape = UIInterfaceOrientationIsLandscape([[UIDevice currentDevice] orientation]);
+//        BOOL isLandscape = UIInterfaceOrientationIsLandscape([[UIDevice currentDevice] orientation]);
 //        if (isLandscape) {
 //            // In landscape mode switch rows and columns
 //            noOfCols = self.numberOfRows;

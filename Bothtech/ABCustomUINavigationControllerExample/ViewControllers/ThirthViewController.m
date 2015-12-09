@@ -73,14 +73,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+  
     [self sourceImages];
     
     
-    
     self.CFView.frame = CGRectMake(0, 0, 1024, 768);
-
     
+
 
     //CoverFlowView *coverFlowView = [CoverFlowView coverFlowViewWithFrame: frame andImages:_arrImages sidePieces:6 sideScale:0.35 middleScale:0.6];
     CoverFlowView *coverFlowView = [CoverFlowView coverFlowViewWithFrame:self.view.frame andImages:_sourceImages sideImageCount:4 sideImageScale:0.5 middleImageScale:0.90];
@@ -92,6 +92,9 @@
 //    [self loadAvatarInCustomView];
 //    
 //    [self addControlButton];
+    
+
+
 
     
 }
@@ -293,10 +296,10 @@
     return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskAll;
-}
+//-(NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskAll;
+//}
 
 - (IBAction)popViewController:(id)sender
 {

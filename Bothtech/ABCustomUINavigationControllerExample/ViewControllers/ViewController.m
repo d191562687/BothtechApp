@@ -12,13 +12,16 @@
 #import "FlipSquaresNavigationController.h"
 #import "BMKMapViewController.h"
 
+
 #import "PopMenu.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *iconView;
 @property (nonatomic, strong) PopMenu *popMenu;
 
+
 - (IBAction)pushViewController:(id)sender;
+
 @end
 
 @implementation ViewController
@@ -38,8 +41,34 @@
 {
     [super viewDidLoad];
     
+    [self gifImage];
+    
     [self.navigationController setNavigationBarHidden:YES];
 	// Do any additional setup after loading the view, typically from a nib.
+   }
+
+//gif
+- (void)gifImage
+{
+    // 设定位置和大小
+    CGRect frame = CGRectMake(0,0,0,0);
+    frame.size = [UIImage imageNamed:@"guzhang.gif"].size;
+    // 读取gif图片数据
+    NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"guzhang" ofType:@"gif"]];
+    // view生成
+//    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
+//    webView.userInteractionEnabled = NO;//用户不可交互
+//    [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+//    [self.view addSubview:webView];
+    
+    //webView
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
+    webView.backgroundColor = [UIColor blackColor];
+    webView.scalesPageToFit = YES;
+    webView.userInteractionEnabled = NO;//用户不可交互
+    [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+    [self.iconView addSubview:webView];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,10 +82,10 @@
     return NO;
 }
 
--(NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskAll;
-}
+//-(NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskAll;
+//}
 
 - (IBAction)pushViewController:(id)sender {
     SecondViewController *secondVC = [[SecondViewController alloc] initViewController];
@@ -130,5 +159,14 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [self showMenu];
 }
+
+- (void)dealloc {
+    NSLog(@"dealloc");
+    
+
+    
+}
+
+
 
 @end

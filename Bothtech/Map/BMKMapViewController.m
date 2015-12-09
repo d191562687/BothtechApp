@@ -11,9 +11,13 @@
 
 @interface BMKMapViewController ()
 
+
+
 @end
 
 @implementation BMKMapViewController
+
+
 
 - (id)initViewController
 {
@@ -24,19 +28,16 @@
 }
 
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //初始化BMKLocationService
-
+ 
     
-//    //适配ios7
-//    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0))
-//    {
-//        self.navigationController.navigationBar.translucent = YES;
-//    }
+    //适配ios7
+    if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0))
+    {
+        self.navigationController.navigationBar.translucent = YES;
+    }
     _locService = [[BMKLocationService alloc]init];
     [followHeadBtn setEnabled:NO];
     [followingBtn setAlpha:0.6];
@@ -51,13 +52,6 @@
     //按钮
     [self loadAvatarInKeyWindow];
     
-    
-    
-
-    
-
-
-
 }
 //实现相关delegate 处理位置信息更新
 
@@ -236,14 +230,22 @@
     return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations
+//-(NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskAll;
+//}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return UIInterfaceOrientationMaskAll;
+    // Return YES for supported orientations
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 
-
-
+- (void)reload{
+    
+    
+}
 /*
 #pragma mark - Navigation
 
