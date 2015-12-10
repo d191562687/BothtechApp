@@ -50,6 +50,7 @@
     [self startLocation];
     
     //按钮
+    
     [self loadAvatarInKeyWindow];
     
 }
@@ -230,10 +231,7 @@
     return YES;
 }
 
-//-(NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskAll;
-//}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

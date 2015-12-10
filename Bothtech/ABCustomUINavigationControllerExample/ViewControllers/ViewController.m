@@ -12,6 +12,7 @@
 #import "FlipSquaresNavigationController.h"
 #import "BMKMapViewController.h"
 #import "H5SecondViewController.h"
+#import "WebViewController.h"
 
 
 #import "PopMenu.h"
@@ -123,7 +124,7 @@
     menuItem = [MenuItem itemWithTitle:@"关于我们" iconName:@"post_type_bubble_me7" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
     [items addObject:menuItem];
     
-    menuItem = [MenuItem itemWithTitle:@"Map" iconName:@"post_type_bubble_Position8" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
+    menuItem = [MenuItem itemWithTitle:@"地图" iconName:@"post_type_bubble_Position8" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
     [items addObject:menuItem];
     
     
@@ -144,7 +145,7 @@
 
             
         }
-        if ([selectedItem.title  isEqual: @"Map"]) {
+        if ([selectedItem.title  isEqual: @"地图"]) {
             BMKMapViewController * mapVC = [[BMKMapViewController alloc] initViewController];
             [self.navigationController pushViewController:mapVC animated:YES];
         }
@@ -153,6 +154,16 @@
             H5SecondViewController * H5 = [[H5SecondViewController alloc] initViewController];
             [self.navigationController pushViewController:H5 animated:YES];
         }
+        
+        if ([selectedItem.title  isEqual: @"网站建设"]) {
+            WebViewController * webVC = [[WebViewController alloc] initViewController];
+            [self.navigationController pushViewController:webVC animated:YES];
+        }
+        
+//        if ([selectedItem.title  isEqual: @"网站建设"]) {
+//            qqqViewController * qqq = [[qqqViewController alloc] initViewController];
+//            [self.navigationController pushViewController:qqq animated:YES];
+//        }
 
         
     };
