@@ -56,6 +56,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
+    
+        
     }
     
     return self;
@@ -66,7 +68,8 @@
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
-    }
+        
+           }
     
     
     return self;
@@ -84,9 +87,10 @@
     
     [self didApper];
     
+   
     //按钮
     [self loadAvatarInKeyWindow];
-    
+
     
 }
 
@@ -230,12 +234,16 @@
     ivc.imageArray = img ;
     ivc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     NSLog(@"%d",_photos.count);
-    //    [self.navigationController pushViewController:ivc animated:YES];
+    [self.navigationController pushViewController:ivc animated:YES];
     ////
     ////    [self flipToViewController:ivc fromView:imageTap withCompletion:NULL];
     
     
-    [self presentViewController:ivc animated:YES completion:nil];
+//    
+//    [self presentViewController:ivc animated:YES completion:nil];
+//    
+//    [self removeAllFromKeyWindow];
+//    [self removeAllFromView];
     
     
     

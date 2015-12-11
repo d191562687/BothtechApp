@@ -8,6 +8,7 @@
 
 #import "ImageTestViewController.h"
 #import "MJPhotoView.h"
+#import "WebViewController.h"
 
 
 @interface ImageTestViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate,UIAlertViewDelegate>
@@ -75,31 +76,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self createToolbar];
- 
-//
-//    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
-//    [self.view addGestureRecognizer:panRecognizer];//关键语句，给self.view添加一个手势监测；
-//    panRecognizer.maximumNumberOfTouches = 1;
-//    panRecognizer.delegate = self;
-//
-//    
-//    // 双击的 Recognizer
-//    UITapGestureRecognizer* doubleRecognizer ;
-//    doubleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(DoubleTap:)];
-//    doubleRecognizer.numberOfTapsRequired = 2; // 双击
-//    //关键语句，给self.view添加一个手势监测；
-//    [self.view addGestureRecognizer:doubleRecognizer];
+
     
 }
 
-//-(void)DoubleTap:(UITapGestureRecognizer*)recognizer
-//{
-//    //处理双击操作
-//    NSLog(@"1231231233");
-//}
-/**
- *  ------------------1-1-----1--------
- */
+
 
 - (void)highAndWidth
 {
@@ -182,7 +163,7 @@
         
         pan.minimumNumberOfTouches = 1;
         pan.maximumNumberOfTouches = 1;
-//        [imgView addGestureRecognizer:pan];
+
         
         imgView.frame = CGRectMake(0, 0, w-0, h);
         
@@ -215,8 +196,7 @@
         
         
         //长按事件开始"
-        NSLog(@"wwwwwfffffff");
-        //      UIImageWriteToSavedPhotosAlbum([imageView image], nil, nil,nil);
+  
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
                                                         message:@"是否保存图片"
@@ -241,28 +221,6 @@
     }
     
 }
-//图片
-//- (void)saveImageToPhotos:(UIImage*)savedImage
-//{
-//    UIImageWriteToSavedPhotosAlbum(imgView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-//}
-//// 指定回调方法
-//- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
-//{
-//    NSString *msg = nil ;
-//    if(error != NULL){
-//        msg = @"保存图片失败" ;
-//    }else{
-//        msg = @"保存图片成功" ;
-//    }
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示"
-//                                                    message:msg
-//                                                   delegate:self
-//                                          cancelButtonTitle:@"确定"
-//                                          otherButtonTitles:nil];
-//    [alert show];
-//}
-
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -272,12 +230,9 @@
         [self dismissViewControllerAnimated:YES completion:NULL];
     }
     if (buttonIndex == 1) {
-      //  NSString* msg = [[NSString alloc] initWithFormat:",buttonIndex];
-        //保存图片
+             //保存图片
         UIImageWriteToSavedPhotosAlbum([imgView image], nil, nil,nil);
-//        UIImage *savedImage = [UIImage imageNamed:@"savedImage.png"];
-//        
-//        [self saveImageToPhotos:savedImage];
+
   
         
         NSLog(@"保存");
@@ -324,8 +279,13 @@
 
 -(void)dealTap:(UITapGestureRecognizer *)tap
 {
-    NSLog(@"pop");
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    NSLog(@"pop");
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    WebViewController * webVC = [[WebViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
+
+
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -496,7 +456,7 @@
 {
     if (!_page) {
         bottomLabel.textColor = [UIColor whiteColor];
-        bottomLabel.text = [NSString stringWithFormat:@"1/%d",_imageArray.count];
+        bottomLabel.text = [NSString stringWithFormat:@"1/%lu",(unsigned long)_imageArray.count];
     }else{
         bottomLabel.textColor = [UIColor whiteColor];
         bottomLabel.text = [NSString stringWithFormat:@"%d/%d",_page,_imageArray.count];
