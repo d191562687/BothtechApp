@@ -459,7 +459,7 @@
         bottomLabel.text = [NSString stringWithFormat:@"1/%lu",(unsigned long)_imageArray.count];
     }else{
         bottomLabel.textColor = [UIColor whiteColor];
-        bottomLabel.text = [NSString stringWithFormat:@"%d/%d",_page,_imageArray.count];
+        bottomLabel.text = [NSString stringWithFormat:@"%d/%lu",_page,(unsigned long)_imageArray.count];
     }
 
 }

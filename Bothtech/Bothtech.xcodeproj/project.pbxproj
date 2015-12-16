@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2906E49C1C1E68A600A0E489 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2906E49B1C1E68A600A0E489 /* avatar@2x.png */; };
 		290A14AF1C0D6CE100C68EB9 /* MMGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A14A91C0D6CE100C68EB9 /* MMGridView.m */; };
 		290A14B01C0D6CE100C68EB9 /* MMGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A14AB1C0D6CE100C68EB9 /* MMGridViewCell.m */; };
 		290A14B11C0D6CE100C68EB9 /* MMGridViewDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A14AE1C0D6CE100C68EB9 /* MMGridViewDefaultCell.m */; };
@@ -193,7 +194,6 @@
 		296CDE521C0EA19400D8F81A /* CoverFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296CDE4F1C0EA19400D8F81A /* CoverFlowView.m */; };
 		296CDE561C0EF56400D8F81A /* Read.m in Sources */ = {isa = PBXBuildFile; fileRef = 296CDE551C0EF56400D8F81A /* Read.m */; };
 		296CDE5A1C0EFD3900D8F81A /* RCDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 296CDE591C0EFD3900D8F81A /* RCDraggableButton.m */; };
-		296CDE5C1C0EFEAC00D8F81A /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 296CDE5B1C0EFEAC00D8F81A /* avatar@2x.png */; };
 		296E1DD81C180E9500C2EE39 /* H5SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296E1DD61C180E9500C2EE39 /* H5SecondViewController.m */; };
 		296E1DD91C180E9500C2EE39 /* H5SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296E1DD71C180E9500C2EE39 /* H5SecondViewController.xib */; };
 		296E1DDD1C180EBF00C2EE39 /* H5ThirthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296E1DDB1C180EBF00C2EE39 /* H5ThirthViewController.m */; };
@@ -246,6 +246,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2906E49B1C1E68A600A0E489 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
 		290A14A81C0D6CE100C68EB9 /* MMGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGridView.h; sourceTree = "<group>"; };
 		290A14A91C0D6CE100C68EB9 /* MMGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGridView.m; sourceTree = "<group>"; };
 		290A14AA1C0D6CE100C68EB9 /* MMGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGridViewCell.h; sourceTree = "<group>"; };
@@ -442,7 +443,6 @@
 		296CDE551C0EF56400D8F81A /* Read.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Read.m; path = ../../Allimage/Read.m; sourceTree = "<group>"; };
 		296CDE581C0EFD3900D8F81A /* RCDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDraggableButton.h; sourceTree = "<group>"; };
 		296CDE591C0EFD3900D8F81A /* RCDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDraggableButton.m; sourceTree = "<group>"; };
-		296CDE5B1C0EFEAC00D8F81A /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
 		296E1DD51C180E9500C2EE39 /* H5SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H5SecondViewController.h; sourceTree = "<group>"; };
 		296E1DD61C180E9500C2EE39 /* H5SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H5SecondViewController.m; sourceTree = "<group>"; };
 		296E1DD71C180E9500C2EE39 /* H5SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = H5SecondViewController.xib; sourceTree = "<group>"; };
@@ -1161,8 +1161,8 @@
 		3CCCEAEC17B4E0F800750A12 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				2906E49B1C1E68A600A0E489 /* avatar@2x.png */,
 				295C81CB1C16CF5C00D71CC4 /* guzhang.gif */,
-				296CDE5B1C0EFEAC00D8F81A /* avatar@2x.png */,
 				290A14B21C0D6EAF00C68EB9 /* cell-image.png */,
 				290A14B31C0D6EAF00C68EB9 /* cell-image@2x.png */,
 				29CAD6711C0C46F200C3F576 /* Appgai.jpg */,
@@ -1387,6 +1387,7 @@
 				3CCCEB0D17B4E0F800750A12 /* bg_3.png in Resources */,
 				292E83A81C1971B40063F964 /* 从头开始网站1.png in Resources */,
 				296CDE4B1C0EA14700D8F81A /* 26.jpg in Resources */,
+				2906E49C1C1E68A600A0E489 /* avatar@2x.png in Resources */,
 				292E83B51C1971B40063F964 /* 佳饰光网站1.png in Resources */,
 				296CDE441C0EA14700D8F81A /* 19.jpg in Resources */,
 				292E83A41C1971B40063F964 /* 中诚通达汽车商城5.png in Resources */,
@@ -1446,7 +1447,6 @@
 				292E83CC1C1971B40063F964 /* 回龙观社区网3.png in Resources */,
 				292E839E1C1971B40063F964 /* 中兴天安网站4.png in Resources */,
 				292E83C31C1971B40063F964 /* 供暖信息报网站6.png in Resources */,
-				296CDE5C1C0EFEAC00D8F81A /* avatar@2x.png in Resources */,
 				296E1DDE1C180EBF00C2EE39 /* H5ThirthViewController.xib in Resources */,
 				292E83941C1971B40063F964 /* 世纪鼎城0.png in Resources */,
 				292E83B81C1971B40063F964 /* 佳饰光网站4.png in Resources */,
