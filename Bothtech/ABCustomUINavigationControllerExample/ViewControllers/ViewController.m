@@ -21,6 +21,8 @@
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *iconView;
 @property (nonatomic, strong) PopMenu *popMenu;
+@property (nonatomic, strong) UIButton * mainButton;
+
 
 
 - (IBAction)pushViewController:(id)sender;
@@ -63,6 +65,18 @@
 //    webView.userInteractionEnabled = NO;//用户不可交互
 //    [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
 //    [self.view addSubview:webView];
+    
+    //按钮
+    self.mainButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 + 20, self.view.frame.size.height/2 - 220, 200, 190)];
+    [self.mainButton setImage:[UIImage imageNamed:@"QQ.png"] forState:UIControlStateNormal];
+    [self.mainButton addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.mainButton];
+    
+                                                     
+                                                     
+
+    
+    
     
     //webView
     UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
@@ -174,7 +188,12 @@
     //    [_popMenu showMenuAtView:self.view startPoint:CGPointMake(CGRectGetWidth(self.view.bounds) - 60, CGRectGetHeight(self.view.bounds)) endPoint:CGPointMake(60, CGRectGetHeight(self.view.bounds))];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    [self showMenu];
+//}
+
+- (void)butClick
+{
     [self showMenu];
 }
 

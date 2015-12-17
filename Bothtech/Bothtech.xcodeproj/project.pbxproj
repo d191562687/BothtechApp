@@ -13,6 +13,7 @@
 		290A14B11C0D6CE100C68EB9 /* MMGridViewDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A14AE1C0D6CE100C68EB9 /* MMGridViewDefaultCell.m */; };
 		290A14B41C0D6EAF00C68EB9 /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 290A14B21C0D6EAF00C68EB9 /* cell-image.png */; };
 		290A14B51C0D6EAF00C68EB9 /* cell-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 290A14B31C0D6EAF00C68EB9 /* cell-image@2x.png */; };
+		2920EDE41C22C02000A9938D /* QQ.png in Resources */ = {isa = PBXBuildFile; fileRef = 2920EDE31C22C02000A9938D /* QQ.png */; };
 		292E838C1C1971B30063F964 /* LULU花店商城0.png in Resources */ = {isa = PBXBuildFile; fileRef = 292E82E51C1971B30063F964 /* LULU花店商城0.png */; };
 		292E838D1C1971B30063F964 /* LULU花店商城1.png in Resources */ = {isa = PBXBuildFile; fileRef = 292E82E61C1971B30063F964 /* LULU花店商城1.png */; };
 		292E838E1C1971B30063F964 /* LULU花店商城2.png in Resources */ = {isa = PBXBuildFile; fileRef = 292E82E71C1971B30063F964 /* LULU花店商城2.png */; };
@@ -280,6 +281,7 @@
 		290A14AE1C0D6CE100C68EB9 /* MMGridViewDefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMGridViewDefaultCell.m; sourceTree = "<group>"; };
 		290A14B21C0D6EAF00C68EB9 /* cell-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-image.png"; sourceTree = "<group>"; };
 		290A14B31C0D6EAF00C68EB9 /* cell-image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell-image@2x.png"; sourceTree = "<group>"; };
+		2920EDE31C22C02000A9938D /* QQ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QQ.png; sourceTree = "<group>"; };
 		292E82E51C1971B30063F964 /* LULU花店商城0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULU花店商城0.png"; sourceTree = "<group>"; };
 		292E82E61C1971B30063F964 /* LULU花店商城1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULU花店商城1.png"; sourceTree = "<group>"; };
 		292E82E71C1971B30063F964 /* LULU花店商城2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULU花店商城2.png"; sourceTree = "<group>"; };
@@ -1270,6 +1272,7 @@
 		3CCCEAEC17B4E0F800750A12 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				2920EDE31C22C02000A9938D /* QQ.png */,
 				2906E49B1C1E68A600A0E489 /* avatar@2x.png */,
 				295C81CB1C16CF5C00D71CC4 /* guzhang.gif */,
 				290A14B21C0D6EAF00C68EB9 /* cell-image.png */,
@@ -1450,6 +1453,7 @@
 				292E84081C1971B40063F964 /* 格瑞德曼9.png in Resources */,
 				292E840D1C1971B40063F964 /* 浩德仪器网4.png in Resources */,
 				292E83951C1971B40063F964 /* 世纪鼎城1.png in Resources */,
+				2920EDE41C22C02000A9938D /* QQ.png in Resources */,
 				292E840A1C1971B40063F964 /* 浩德仪器网1.png in Resources */,
 				296CDE3E1C0EA14700D8F81A /* 13.jpg in Resources */,
 				292E83FF1C1971B40063F964 /* 格瑞德曼10.png in Resources */,

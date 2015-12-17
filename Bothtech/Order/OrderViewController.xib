@@ -13,21 +13,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="OrdarVC" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="orderVC" image="Appgai.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QAr-Z6-NII">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                </imageView>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="QAr-Z6-NII" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Je-DX-dZA"/>
-                <constraint firstAttribute="bottom" secondItem="QAr-Z6-NII" secondAttribute="bottom" id="RV3-f3-XCn"/>
-                <constraint firstAttribute="trailing" secondItem="QAr-Z6-NII" secondAttribute="trailing" id="gH8-2y-BgR"/>
-                <constraint firstItem="QAr-Z6-NII" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uwd-lo-d9A"/>
-            </constraints>
         </view>
     </objects>
-    <resources>
-        <image name="Appgai.jpg" width="1024" height="768"/>
-    </resources>
 </document>

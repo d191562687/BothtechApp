@@ -141,7 +141,7 @@
     _dataArray = [@[[dic1 mutableCopy],[dic2 mutableCopy],[dic3 mutableCopy],[dic4 mutableCopy],[dic5 mutableCopy],[dic6 mutableCopy],[dic7 mutableCopy],[dic8 mutableCopy],[dic9 mutableCopy],[dic10 mutableCopy]] mutableCopy];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 20)];
-    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -162,6 +162,7 @@
     _endPointY = rect.origin.y + 35;
     
 
+    [self loadAvatarInKeyWindow];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -807,5 +808,76 @@
         
     }
 }
+
+#pragma 悬浮按钮
+
+- (void)loadAvatarInKeyWindow {
+    
+    RCDraggableButton * avatar = [[RCDraggableButton alloc] initInKeyWindowWithFrame:CGRectMake(900, 630, 90, 90)];
+    [avatar setBackgroundImage:[UIImage imageNamed:@"avatar"] forState: UIControlStateNormal];
+    
+    [avatar setLongPressBlock:^(RCDraggableButton *avatar) {
+        NSLog(@"\n\tAvatar in keyWindow ===  LongPress!!! ===");
+        //More todo here.
+        
+    }];
+    
+    [avatar setTapBlock:^(RCDraggableButton *avatar) {
+        NSLog(@"\n\tAvatar in keyWindow ===  111Tap!!! ===");
+        //More todo here.
+        //     [self dismissViewControllerAnimated:YES completion:nil];
+        
+        //More todo here.
+        ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
+        [self.navigationController popToViewController:firstVC animated:YES];
+        
+        [self removeAllFromView];
+        [self removeAllFromKeyWindow];
+        
+        
+    }];
+    
+    [avatar setDoubleTapBlock:^(RCDraggableButton *avatar) {
+        NSLog(@"\n\tAvatar in keyWindow ===  DoubleTap!!! ===");
+        //More todo here.
+        
+        
+    }];
+    
+    [avatar setDraggingBlock:^(RCDraggableButton *avatar) {
+        NSLog(@"\n\tAvatar in keyWindow === Dragging!!! ===");
+        //More todo here.
+        
+    }];
+    
+    [avatar setDragDoneBlock:^(RCDraggableButton *avatar) {
+        NSLog(@"\n\tAvatar in keyWindow === DragDone!!! ===");
+        //More todo here.
+        
+    }];
+    
+    [avatar setAutoDockingBlock:^(RCDraggableButton *avatar) {
+        NSLog(@"\n\tAvatar in keyWindow === AutoDocking!!! ===");
+        //More todo here.
+        
+    }];
+    
+    [avatar setAutoDockingDoneBlock:^(RCDraggableButton *avatar) {
+        NSLog(@"\n\tAvatar in keyWindow === AutoDockingDone!!! ===");
+        //More todo here.
+        
+    }];
+}
+
+- (void)removeAllFromKeyWindow {
+    [RCDraggableButton removeAllFromKeyWindow];
+}
+
+- (void)removeAllFromView {
+    [RCDraggableButton removeAllFromView:[self.view viewWithTag:89]];
+}
+
+//--------------------------按钮
+
 
 @end
