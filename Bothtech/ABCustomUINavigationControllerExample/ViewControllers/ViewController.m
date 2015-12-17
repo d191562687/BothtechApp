@@ -13,6 +13,7 @@
 #import "BMKMapViewController.h"
 #import "H5SecondViewController.h"
 #import "WebViewController.h"
+#import "OrderViewController.h"
 
 
 #import "PopMenu.h"
@@ -160,10 +161,10 @@
             [self.navigationController pushViewController:webVC animated:YES];
         }
         
-//        if ([selectedItem.title  isEqual: @"网站建设"]) {
-//            qqqViewController * qqq = [[qqqViewController alloc] initViewController];
-//            [self.navigationController pushViewController:qqq animated:YES];
-//        }
+        if ([selectedItem.title  isEqual: @"订单"]) {
+            OrderViewController * ordarVC = [[OrderViewController alloc] initViewController];
+            [self.navigationController pushViewController:ordarVC animated:YES];
+        }
 
         
     };
