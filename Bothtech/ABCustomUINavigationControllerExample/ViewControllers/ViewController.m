@@ -84,7 +84,7 @@
     self.mainButton.tag = 9999;
     [self.mainButton setImage:[UIImage imageNamed:@"QQ.png"] forState:UIControlStateNormal];
     [self.mainButton addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.mainButton];
+    [self.iconView addSubview:self.mainButton];
     
     
    
