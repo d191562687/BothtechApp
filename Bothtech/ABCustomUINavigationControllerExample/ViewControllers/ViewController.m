@@ -65,18 +65,11 @@
 //    webView.userInteractionEnabled = NO;//用户不可交互
 //    [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
 //    [self.view addSubview:webView];
-    
-    //按钮
-    self.mainButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 + 20, self.view.frame.size.height/2 - 220, 200, 190)];
-    [self.mainButton setImage:[UIImage imageNamed:@"QQ.png"] forState:UIControlStateNormal];
-    [self.mainButton addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.mainButton];
-    
-                                                     
-                                                     
 
     
+
     
+ 
     
     //webView
     UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
@@ -84,9 +77,23 @@
     webView.scalesPageToFit = YES;
     webView.userInteractionEnabled = NO;//用户不可交互
     [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
-    [self.iconView addSubview:webView];
+     [self.iconView addSubview:webView];
+    
+    //按钮
+    self.mainButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 + 20, self.view.frame.size.height/2 - 220, 200, 190)];
+    self.mainButton.tag = 9999;
+    [self.mainButton setImage:[UIImage imageNamed:@"QQ.png"] forState:UIControlStateNormal];
+    [self.mainButton addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.mainButton];
+    
+    
+   
+    
+    
 
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -188,17 +195,24 @@
     //    [_popMenu showMenuAtView:self.view startPoint:CGPointMake(CGRectGetWidth(self.view.bounds) - 60, CGRectGetHeight(self.view.bounds)) endPoint:CGPointMake(60, CGRectGetHeight(self.view.bounds))];
 }
 
-//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    [self showMenu];
-//}
-
-- (void)butClick
-{
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [self showMenu];
+    
+
 }
+
+
+//- (void)butClick
+//{
+//    [self showMenu];
+//    
+//    NSLog(@"123");
+//
+//}
 
 - (void)dealloc {
     NSLog(@"dealloc");
+   
   
 }
 

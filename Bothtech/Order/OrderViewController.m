@@ -135,7 +135,7 @@
                             @"picture":@"10.png",
                             @"month_saled":@136};
     
-    self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 1024, 768)];
+            self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 1024, 768)];
     
     //这样书写的定义数据，用于后面的动态添加订单个数的key：orderCount。 实际项目中没有这么复杂
     _dataArray = [@[[dic1 mutableCopy],[dic2 mutableCopy],[dic3 mutableCopy],[dic4 mutableCopy],[dic5 mutableCopy],[dic6 mutableCopy],[dic7 mutableCopy],[dic8 mutableCopy],[dic9 mutableCopy],[dic10 mutableCopy]] mutableCopy];
@@ -596,7 +596,7 @@
             
             if (dic[@"id"] == dict[@"id"]) {
                 NSInteger nCount = [dic[@"orderCount"] integerValue];
-                //                nCount -= 1;
+                                nCount -= 1;
                 [dic setObject:[NSString stringWithFormat:@"%ld",nCount] forKey:@"orderCount"];
                 block(sectionID,rowID);
                 
@@ -879,5 +879,11 @@
 
 //--------------------------按钮
 
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"111");
+    
+    
+}
 
 @end

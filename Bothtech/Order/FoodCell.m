@@ -7,6 +7,7 @@
 //
 
 #import "FoodCell.h"
+#import "ShoppingCartCell.h"
 
 @implementation FoodCell
 
@@ -40,11 +41,21 @@
     [self showOrderNumbers:self.amount];
 
 }
+
+//- (IBAction)minus:(id)sender {
+//    
+//    self.number -= 1;
+//    
+//    [self showNumber:self.number];
+//    self.operationBlock(self.number,NO);
+//}
+
+
 - (IBAction)minus:(id)sender {
     
     self.amount -= 1;
     
-    self.plusBlock(self.amount,YES);
+    self.plusBlock(self.amount,NO);
     
     [self showOrderNumbers:self.amount];
 }

@@ -34,6 +34,29 @@
 
 @implementation ShoppingCartView
 
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        
+//        
+//        
+//    }
+//    
+//    return self;
+//    //To change the template use AppCode | Preferences | File Templates.
+//}
+//
+//- (id)initViewController
+//{
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        self = [[OrderViewController alloc] initWithNibName:@"OrderViewController" bundle:nil];
+//        
+//    }
+//    
+//    
+//    return self;
+//}
+
 
 -(instancetype) initWithFrame:(CGRect)frame inView:(UIView *)parentView withObjects:(NSMutableArray *)objects
 {
@@ -119,7 +142,7 @@
 {
 
     if (![_badge.badgeValue intValue]) {
-        [_shoppingCartBtn setUserInteractionEnabled:NO];
+        [_shoppingCartBtn setUserInteractionEnabled:YES];
         return;
     }
     [self updateFrame:_OrderList];
@@ -228,6 +251,7 @@
     formatter.numberStyle = kCFNumberFormatterDecimalStyle;
     
     NSString *amount = [formatter stringFromNumber:[NSNumber numberWithInteger:nTotal]];
+    
     if(nTotal > 0)
     {
         _money.font = [UIFont systemFontOfSize:20.0f];
