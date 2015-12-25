@@ -14,6 +14,7 @@
 #import "H5SecondViewController.h"
 #import "WebViewController.h"
 #import "OrderViewController.h"
+#import "BrandViewController.h"
 
 
 #import "PopMenu.h"
@@ -22,6 +23,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *iconView;
 @property (nonatomic, strong) PopMenu *popMenu;
 @property (nonatomic, strong) UIButton * mainButton;
+
+@property (nonatomic,strong) UIWebView * gifImage;
 
 
 
@@ -42,6 +45,39 @@
     return self;
 }
 
+//gif
+- (UIWebView *)gifImage
+{
+    if (!_gifImage) {
+        
+        // 设定位置和大小
+        CGRect frame = CGRectMake(0,0,0,0);
+        frame.size = [UIImage imageNamed:@"guzhang.gif"].size;
+        // 读取gif图片数据
+        NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"guzhang" ofType:@"gif"]];
+        
+        //webView
+        _gifImage = [[UIWebView alloc] initWithFrame:frame];
+        _gifImage.backgroundColor = [UIColor blackColor];
+        _gifImage.scalesPageToFit = YES;
+        _gifImage.userInteractionEnabled = NO;//用户不可交互
+        [_gifImage loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+        [self.iconView addSubview:_gifImage];
+        
+        //按钮
+        self.mainButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 + 20, self.view.frame.size.height/2 - 220, 200, 190)];
+        self.mainButton.tag = 9999;
+        [self.mainButton setImage:[UIImage imageNamed:@"QQ.png"] forState:UIControlStateNormal];
+        [self.mainButton addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.iconView addSubview:self.mainButton];
+        
+        
+    }
+    return _gifImage;
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -50,47 +86,6 @@
     
     [self.navigationController setNavigationBarHidden:YES];
 	// Do any additional setup after loading the view, typically from a nib.
-   }
-
-//gif
-- (void)gifImage
-{
-    // 设定位置和大小
-    CGRect frame = CGRectMake(0,0,0,0);
-    frame.size = [UIImage imageNamed:@"guzhang.gif"].size;
-    // 读取gif图片数据
-    NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"guzhang" ofType:@"gif"]];
-    // view生成
-//    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
-//    webView.userInteractionEnabled = NO;//用户不可交互
-//    [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
-//    [self.view addSubview:webView];
-
-    
-
-    
- 
-    
-    //webView
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
-    webView.backgroundColor = [UIColor blackColor];
-    webView.scalesPageToFit = YES;
-    webView.userInteractionEnabled = NO;//用户不可交互
-    [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
-     [self.iconView addSubview:webView];
-    
-    //按钮
-    self.mainButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 + 20, self.view.frame.size.height/2 - 220, 200, 190)];
-    self.mainButton.tag = 9999;
-    [self.mainButton setImage:[UIImage imageNamed:@"QQ.png"] forState:UIControlStateNormal];
-    [self.mainButton addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.iconView addSubview:self.mainButton];
-    
-    
-   
-    
-    
-
 }
 
 
@@ -185,6 +180,10 @@
         if ([selectedItem.title  isEqual: @"订单"]) {
             OrderViewController * ordarVC = [[OrderViewController alloc] initViewController];
             [self.navigationController pushViewController:ordarVC animated:YES];
+        }
+        if ([selectedItem.title  isEqual: @"品牌"]) {
+            BrandViewController * brandVC = [[BrandViewController alloc] initViewController];
+            [self.navigationController pushViewController:brandVC animated:YES];
         }
 
         

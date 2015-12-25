@@ -77,6 +77,7 @@
     // Do any additional setup after loading the view.
     [self createToolbar];
 
+
     
 }
 
@@ -145,6 +146,8 @@
         imgView.contentMode = UIViewContentModeScaleAspectFit;
         [view addSubview:imgView];
         
+        
+
         //手势
         UIPinchGestureRecognizer *pinch=[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(dealPinch:)];
         [imgView addGestureRecognizer:pinch];
@@ -152,21 +155,15 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
         [imgView addGestureRecognizer:tap];
         
-        UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dealpPan:)];
-        
+
         UILongPressGestureRecognizer *longPressReger = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
         longPressReger.minimumPressDuration = 1.2;
         
         [scrollView addGestureRecognizer:longPressReger];
-        
 
-        
-        pan.minimumNumberOfTouches = 1;
-        pan.maximumNumberOfTouches = 1;
-
-        
         imgView.frame = CGRectMake(0, 0, w-0, h);
         
+       
         
         CABasicAnimation *animation=[CABasicAnimation animationWithKeyPath:@"transform"];
         CATransform3D transform=CATransform3DMakeScale(0.2, 0.2, 1.0);
@@ -184,6 +181,7 @@
 }
 
 #pragma mark - 手势
+
 
 
 
@@ -251,7 +249,7 @@
         
 
     }
-    }
+}
 
 -(void)dealpPan:(UIPanGestureRecognizer *)paramSender
 {
@@ -259,6 +257,8 @@
         //通过使用 locationInView 这个方法,来获取到手势的坐标
         CGPoint location = [paramSender locationInView:paramSender.view.superview];
         paramSender.view.center = location;
+        
+ 
     }
     
 }

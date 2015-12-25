@@ -229,6 +229,38 @@
 		29A088D11C2144FA0070EFB3 /* ShoppingCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A088D01C2144FA0070EFB3 /* ShoppingCartView.m */; };
 		29A088DA1C214C550070EFB3 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A088D81C214C550070EFB3 /* OrderViewController.m */; };
 		29A088DB1C214C550070EFB3 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29A088D91C214C550070EFB3 /* OrderViewController.xib */; };
+		29BBA3B51C2CE5FA00517FFC /* UIImage+UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BBA3B11C2CE5FA00517FFC /* UIImage+UIImageExtras.m */; };
+		29BBA3B91C2D137900517FFC /* BrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BBA3B71C2D137900517FFC /* BrandViewController.m */; };
+		29BBA3BA1C2D137900517FFC /* BrandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3B81C2D137900517FFC /* BrandViewController.xib */; };
+		29BBA3BD1C2D13AB00517FFC /* Reads.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BBA3BC1C2D13AB00517FFC /* Reads.m */; };
+		29BBA3DA1C2D18A700517FFC /* luosimao服务平台logo0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3BF1C2D18A700517FFC /* luosimao服务平台logo0.png */; };
+		29BBA3DB1C2D18A700517FFC /* 一汽丰田0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C01C2D18A700517FFC /* 一汽丰田0.png */; };
+		29BBA3DC1C2D18A700517FFC /* 中信银行0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C11C2D18A700517FFC /* 中信银行0.png */; };
+		29BBA3DD1C2D18A700517FFC /* 中国发展研究基金会0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C21C2D18A700517FFC /* 中国发展研究基金会0.png */; };
+		29BBA3DE1C2D18A700517FFC /* 中国建筑结构金属协会0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C31C2D18A700517FFC /* 中国建筑结构金属协会0.png */; };
+		29BBA3DF1C2D18A700517FFC /* 中国支教联盟0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C41C2D18A700517FFC /* 中国支教联盟0.png */; };
+		29BBA3E01C2D18A700517FFC /* 中国铁道出版社0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C51C2D18A700517FFC /* 中国铁道出版社0.png */; };
+		29BBA3E11C2D18A700517FFC /* 初心武道场Logo0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C61C2D18A700517FFC /* 初心武道场Logo0.png */; };
+		29BBA3E21C2D18A700517FFC /* 初见0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C71C2D18A700517FFC /* 初见0.png */; };
+		29BBA3E31C2D18A700517FFC /* 友盟0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C81C2D18A700517FFC /* 友盟0.png */; };
+		29BBA3E41C2D18A700517FFC /* 咕咚0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3C91C2D18A700517FFC /* 咕咚0.png */; };
+		29BBA3E51C2D18A700517FFC /* 大成律师事务所0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3CA1C2D18A700517FFC /* 大成律师事务所0.png */; };
+		29BBA3E61C2D18A700517FFC /* 天路公考网0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3CB1C2D18A700517FFC /* 天路公考网0.png */; };
+		29BBA3E71C2D18A700517FFC /* 尚城同力0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3CC1C2D18A700517FFC /* 尚城同力0.png */; };
+		29BBA3E81C2D18A700517FFC /* 微盟0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3CD1C2D18A700517FFC /* 微盟0.png */; };
+		29BBA3E91C2D18A700517FFC /* 快法务0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3CE1C2D18A700517FFC /* 快法务0.png */; };
+		29BBA3EA1C2D18A700517FFC /* 支付宝0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3CF1C2D18A700517FFC /* 支付宝0.png */; };
+		29BBA3EB1C2D18A700517FFC /* 普达财务logo0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D01C2D18A700517FFC /* 普达财务logo0.png */; };
+		29BBA3EC1C2D18A700517FFC /* 曲美家居0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D11C2D18A700517FFC /* 曲美家居0.png */; };
+		29BBA3ED1C2D18A700517FFC /* 果多美0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D21C2D18A700517FFC /* 果多美0.png */; };
+		29BBA3EE1C2D18A700517FFC /* 派多格0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D31C2D18A700517FFC /* 派多格0.png */; };
+		29BBA3EF1C2D18A700517FFC /* 爱奇艺0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D41C2D18A700517FFC /* 爱奇艺0.png */; };
+		29BBA3F01C2D18A700517FFC /* 百度0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D51C2D18A700517FFC /* 百度0.png */; };
+		29BBA3F11C2D18A700517FFC /* 百度翻译0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D61C2D18A700517FFC /* 百度翻译0.png */; };
+		29BBA3F21C2D18A700517FFC /* 百度识图0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D71C2D18A700517FFC /* 百度识图0.png */; };
+		29BBA3F31C2D18A700517FFC /* 金龙腾0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D81C2D18A700517FFC /* 金龙腾0.png */; };
+		29BBA3F41C2D18A700517FFC /* 银鹭0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D91C2D18A700517FFC /* 银鹭0.png */; };
+		29BBA3F61C2D216900517FFC /* 加0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3F51C2D216900517FFC /* 加0.png */; };
 		29CAD66B1C0C42FE00C3F576 /* GlowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD6641C0C42FE00C3F576 /* GlowImageView.m */; };
 		29CAD66C1C0C42FE00C3F576 /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD6661C0C42FE00C3F576 /* MenuButton.m */; };
 		29CAD66D1C0C42FE00C3F576 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD6681C0C42FE00C3F576 /* MenuItem.m */; };
@@ -517,6 +549,41 @@
 		29A088D71C214C550070EFB3 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		29A088D81C214C550070EFB3 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		29A088D91C214C550070EFB3 /* OrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
+		29BBA3B01C2CE5FA00517FFC /* UIImage+UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageExtras.h"; sourceTree = "<group>"; };
+		29BBA3B11C2CE5FA00517FFC /* UIImage+UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageExtras.m"; sourceTree = "<group>"; };
+		29BBA3B61C2D137900517FFC /* BrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandViewController.h; sourceTree = "<group>"; };
+		29BBA3B71C2D137900517FFC /* BrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandViewController.m; sourceTree = "<group>"; };
+		29BBA3B81C2D137900517FFC /* BrandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandViewController.xib; sourceTree = "<group>"; };
+		29BBA3BB1C2D13AB00517FFC /* Reads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reads.h; sourceTree = "<group>"; };
+		29BBA3BC1C2D13AB00517FFC /* Reads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reads.m; sourceTree = "<group>"; };
+		29BBA3BF1C2D18A700517FFC /* luosimao服务平台logo0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "luosimao服务平台logo0.png"; sourceTree = "<group>"; };
+		29BBA3C01C2D18A700517FFC /* 一汽丰田0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "一汽丰田0.png"; sourceTree = "<group>"; };
+		29BBA3C11C2D18A700517FFC /* 中信银行0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中信银行0.png"; sourceTree = "<group>"; };
+		29BBA3C21C2D18A700517FFC /* 中国发展研究基金会0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中国发展研究基金会0.png"; sourceTree = "<group>"; };
+		29BBA3C31C2D18A700517FFC /* 中国建筑结构金属协会0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中国建筑结构金属协会0.png"; sourceTree = "<group>"; };
+		29BBA3C41C2D18A700517FFC /* 中国支教联盟0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中国支教联盟0.png"; sourceTree = "<group>"; };
+		29BBA3C51C2D18A700517FFC /* 中国铁道出版社0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中国铁道出版社0.png"; sourceTree = "<group>"; };
+		29BBA3C61C2D18A700517FFC /* 初心武道场Logo0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "初心武道场Logo0.png"; sourceTree = "<group>"; };
+		29BBA3C71C2D18A700517FFC /* 初见0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "初见0.png"; sourceTree = "<group>"; };
+		29BBA3C81C2D18A700517FFC /* 友盟0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "友盟0.png"; sourceTree = "<group>"; };
+		29BBA3C91C2D18A700517FFC /* 咕咚0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "咕咚0.png"; sourceTree = "<group>"; };
+		29BBA3CA1C2D18A700517FFC /* 大成律师事务所0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "大成律师事务所0.png"; sourceTree = "<group>"; };
+		29BBA3CB1C2D18A700517FFC /* 天路公考网0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天路公考网0.png"; sourceTree = "<group>"; };
+		29BBA3CC1C2D18A700517FFC /* 尚城同力0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "尚城同力0.png"; sourceTree = "<group>"; };
+		29BBA3CD1C2D18A700517FFC /* 微盟0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微盟0.png"; sourceTree = "<group>"; };
+		29BBA3CE1C2D18A700517FFC /* 快法务0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "快法务0.png"; sourceTree = "<group>"; };
+		29BBA3CF1C2D18A700517FFC /* 支付宝0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "支付宝0.png"; sourceTree = "<group>"; };
+		29BBA3D01C2D18A700517FFC /* 普达财务logo0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "普达财务logo0.png"; sourceTree = "<group>"; };
+		29BBA3D11C2D18A700517FFC /* 曲美家居0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "曲美家居0.png"; sourceTree = "<group>"; };
+		29BBA3D21C2D18A700517FFC /* 果多美0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "果多美0.png"; sourceTree = "<group>"; };
+		29BBA3D31C2D18A700517FFC /* 派多格0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "派多格0.png"; sourceTree = "<group>"; };
+		29BBA3D41C2D18A700517FFC /* 爱奇艺0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "爱奇艺0.png"; sourceTree = "<group>"; };
+		29BBA3D51C2D18A700517FFC /* 百度0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "百度0.png"; sourceTree = "<group>"; };
+		29BBA3D61C2D18A700517FFC /* 百度翻译0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "百度翻译0.png"; sourceTree = "<group>"; };
+		29BBA3D71C2D18A700517FFC /* 百度识图0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "百度识图0.png"; sourceTree = "<group>"; };
+		29BBA3D81C2D18A700517FFC /* 金龙腾0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "金龙腾0.png"; sourceTree = "<group>"; };
+		29BBA3D91C2D18A700517FFC /* 银鹭0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "银鹭0.png"; sourceTree = "<group>"; };
+		29BBA3F51C2D216900517FFC /* 加0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加0.png"; sourceTree = "<group>"; };
 		29CAD6631C0C42FE00C3F576 /* GlowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowImageView.h; sourceTree = "<group>"; };
 		29CAD6641C0C42FE00C3F576 /* GlowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlowImageView.m; sourceTree = "<group>"; };
 		29CAD6651C0C42FE00C3F576 /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButton.h; sourceTree = "<group>"; };
@@ -1161,6 +1228,80 @@
 			path = ZFReOrderTableView;
 			sourceTree = "<group>";
 		};
+		29BBA3A71C2CE5FA00517FFC /* 品牌 */ = {
+			isa = PBXGroup;
+			children = (
+				29BBA3A81C2CE5FA00517FFC /* Controller */,
+				29BBA3AE1C2CE5FA00517FFC /* Lib */,
+				29BBA3AF1C2CE5FA00517FFC /* Other */,
+			);
+			path = "品牌";
+			sourceTree = "<group>";
+		};
+		29BBA3A81C2CE5FA00517FFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				29BBA3B61C2D137900517FFC /* BrandViewController.h */,
+				29BBA3B71C2D137900517FFC /* BrandViewController.m */,
+				29BBA3B81C2D137900517FFC /* BrandViewController.xib */,
+				29BBA3BB1C2D13AB00517FFC /* Reads.h */,
+				29BBA3BC1C2D13AB00517FFC /* Reads.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		29BBA3AE1C2CE5FA00517FFC /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		29BBA3AF1C2CE5FA00517FFC /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				29BBA3B01C2CE5FA00517FFC /* UIImage+UIImageExtras.h */,
+				29BBA3B11C2CE5FA00517FFC /* UIImage+UIImageExtras.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		29BBA3BE1C2D18A700517FFC /* Logo品牌 */ = {
+			isa = PBXGroup;
+			children = (
+				29BBA3BF1C2D18A700517FFC /* luosimao服务平台logo0.png */,
+				29BBA3C01C2D18A700517FFC /* 一汽丰田0.png */,
+				29BBA3C11C2D18A700517FFC /* 中信银行0.png */,
+				29BBA3C21C2D18A700517FFC /* 中国发展研究基金会0.png */,
+				29BBA3C31C2D18A700517FFC /* 中国建筑结构金属协会0.png */,
+				29BBA3C41C2D18A700517FFC /* 中国支教联盟0.png */,
+				29BBA3C51C2D18A700517FFC /* 中国铁道出版社0.png */,
+				29BBA3C61C2D18A700517FFC /* 初心武道场Logo0.png */,
+				29BBA3C71C2D18A700517FFC /* 初见0.png */,
+				29BBA3C81C2D18A700517FFC /* 友盟0.png */,
+				29BBA3C91C2D18A700517FFC /* 咕咚0.png */,
+				29BBA3CA1C2D18A700517FFC /* 大成律师事务所0.png */,
+				29BBA3CB1C2D18A700517FFC /* 天路公考网0.png */,
+				29BBA3CC1C2D18A700517FFC /* 尚城同力0.png */,
+				29BBA3CD1C2D18A700517FFC /* 微盟0.png */,
+				29BBA3CE1C2D18A700517FFC /* 快法务0.png */,
+				29BBA3CF1C2D18A700517FFC /* 支付宝0.png */,
+				29BBA3D01C2D18A700517FFC /* 普达财务logo0.png */,
+				29BBA3D11C2D18A700517FFC /* 曲美家居0.png */,
+				29BBA3D21C2D18A700517FFC /* 果多美0.png */,
+				29BBA3D31C2D18A700517FFC /* 派多格0.png */,
+				29BBA3D41C2D18A700517FFC /* 爱奇艺0.png */,
+				29BBA3D51C2D18A700517FFC /* 百度0.png */,
+				29BBA3D61C2D18A700517FFC /* 百度翻译0.png */,
+				29BBA3D71C2D18A700517FFC /* 百度识图0.png */,
+				29BBA3D81C2D18A700517FFC /* 金龙腾0.png */,
+				29BBA3D91C2D18A700517FFC /* 银鹭0.png */,
+				29BBA3F51C2D216900517FFC /* 加0.png */,
+			);
+			name = "Logo品牌";
+			path = "图库/Logo品牌";
+			sourceTree = "<group>";
+		};
 		29CAD65E1C0C42FE00C3F576 /* PopMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1320,6 +1461,8 @@
 		3CF16BA917930123006E912F = {
 			isa = PBXGroup;
 			children = (
+				29BBA3BE1C2D18A700517FFC /* Logo品牌 */,
+				29BBA3A71C2CE5FA00517FFC /* 品牌 */,
 				29A0889D1C2144610070EFB3 /* Order */,
 				292E82E31C1971B30063F964 /* 图库 */,
 				296E1DDF1C1832EC00C2EE39 /* Web */,
@@ -1418,35 +1561,44 @@
 			files = (
 				292E84171C1971B40063F964 /* 萤火虫网站5.png in Resources */,
 				296CDE401C0EA14700D8F81A /* 0.jpg in Resources */,
+				29BBA3F01C2D18A700517FFC /* 百度0.png in Resources */,
 				29A088B11C2144610070EFB3 /* 2.png in Resources */,
 				29A088B21C2144610070EFB3 /* 3.png in Resources */,
+				29BBA3E11C2D18A700517FFC /* 初心武道场Logo0.png in Resources */,
 				296CDE371C0EA14700D8F81A /* 6.jpg in Resources */,
 				296CDE471C0EA14700D8F81A /* 22.jpg in Resources */,
 				292E84011C1971B40063F964 /* 格瑞德曼2.png in Resources */,
 				292E838C1C1971B30063F964 /* LULU花店商城0.png in Resources */,
 				29CAD6721C0C46F200C3F576 /* Appgai.jpg in Resources */,
+				29BBA3E21C2D18A700517FFC /* 初见0.png in Resources */,
 				3CCCEB0917B4E0F800750A12 /* bg_1.jpg in Resources */,
 				292E83C81C1971B40063F964 /* 北京工业大学2.png in Resources */,
+				29BBA3EC1C2D18A700517FFC /* 曲美家居0.png in Resources */,
 				292E83CE1C1971B40063F964 /* 回龙观社区网5.png in Resources */,
 				292E83E61C1971B40063F964 /* 彼岸春风网站1.png in Resources */,
 				292E83FD1C1971B40063F964 /* 格瑞德曼0.png in Resources */,
 				292E83D71C1971B40063F964 /* 天路公考网13.png in Resources */,
 				296CDE461C0EA14700D8F81A /* 21.jpg in Resources */,
+				29BBA3DF1C2D18A700517FFC /* 中国支教联盟0.png in Resources */,
 				292E83CB1C1971B40063F964 /* 回龙观社区网2.png in Resources */,
 				292E83AB1C1971B40063F964 /* 从头开始网站4.png in Resources */,
 				292E83A71C1971B40063F964 /* 从头开始网站0.png in Resources */,
 				292E83F71C1971B40063F964 /* 李纯博个人网站0.png in Resources */,
 				292E83EF1C1971B40063F964 /* 教育网站7.png in Resources */,
+				29BBA3DA1C2D18A700517FFC /* luosimao服务平台logo0.png in Resources */,
 				292E83CF1C1971B40063F964 /* 回龙观社区网6.png in Resources */,
 				292E83971C1971B40063F964 /* 世纪鼎城3.png in Resources */,
 				29A088BD1C2144610070EFB3 /* praise.png in Resources */,
 				292E84151C1971B40063F964 /* 萤火虫网站3.png in Resources */,
 				296CDE3A1C0EA14700D8F81A /* 9.jpg in Resources */,
 				296CDE381C0EA14700D8F81A /* 7.jpg in Resources */,
+				29BBA3E91C2D18A700517FFC /* 快法务0.png in Resources */,
 				292E84041C1971B40063F964 /* 格瑞德曼5.png in Resources */,
 				29A088BA1C2144610070EFB3 /* cart_1.png in Resources */,
 				292E83DA1C1971B40063F964 /* 天路公考网16.png in Resources */,
+				29BBA3DD1C2D18A700517FFC /* 中国发展研究基金会0.png in Resources */,
 				292E83F11C1971B40063F964 /* 易巢网站1.png in Resources */,
+				29BBA3F41C2D18A700517FFC /* 银鹭0.png in Resources */,
 				292E83F81C1971B40063F964 /* 李纯博个人网站1.png in Resources */,
 				292E83BB1C1971B40063F964 /* 佳饰光网站7.png in Resources */,
 				29A088B91C2144610070EFB3 /* cart.png in Resources */,
@@ -1480,6 +1632,7 @@
 				292E83C21C1971B40063F964 /* 供暖信息报网站5.png in Resources */,
 				292E84111C1971B40063F964 /* 电力工业网3.png in Resources */,
 				292E83CA1C1971B40063F964 /* 回龙观社区网1.png in Resources */,
+				29BBA3F31C2D18A700517FFC /* 金龙腾0.png in Resources */,
 				292E83B91C1971B40063F964 /* 佳饰光网站5.png in Resources */,
 				292E83EB1C1971B40063F964 /* 教育网站3.png in Resources */,
 				292E83D31C1971B40063F964 /* 天路公考网1.png in Resources */,
@@ -1487,19 +1640,25 @@
 				29A088B31C2144610070EFB3 /* 4.png in Resources */,
 				292E83AA1C1971B40063F964 /* 从头开始网站3.png in Resources */,
 				292E84091C1971B40063F964 /* 浩德仪器网0.png in Resources */,
+				29BBA3ED1C2D18A700517FFC /* 果多美0.png in Resources */,
 				3CCCEB0C17B4E0F800750A12 /* bg_2_iPad.jpg in Resources */,
 				292E83FE1C1971B40063F964 /* 格瑞德曼1.png in Resources */,
 				296CDE3D1C0EA14700D8F81A /* 12.jpg in Resources */,
+				29BBA3F11C2D18A700517FFC /* 百度翻译0.png in Resources */,
 				292E83F51C1971B40063F964 /* 易巢网站5.png in Resources */,
 				292E83EC1C1971B40063F964 /* 教育网站4.png in Resources */,
 				292E84181C1971B40063F964 /* 萤火虫网站6.png in Resources */,
+				29BBA3DE1C2D18A700517FFC /* 中国建筑结构金属协会0.png in Resources */,
 				292E83D01C1971B40063F964 /* 回龙观社区网7.png in Resources */,
 				292E83DC1C1971B40063F964 /* 天路公考网18.png in Resources */,
+				29BBA3E31C2D18A700517FFC /* 友盟0.png in Resources */,
 				292E83BA1C1971B40063F964 /* 佳饰光网站6.png in Resources */,
 				296CDE3F1C0EA14700D8F81A /* 14.jpg in Resources */,
 				290A14B41C0D6EAF00C68EB9 /* cell-image.png in Resources */,
 				292E841D1C1971B40063F964 /* 酒窖网站4.png in Resources */,
+				29BBA3E41C2D18A700517FFC /* 咕咚0.png in Resources */,
 				292E839F1C1971B40063F964 /* 中诚通达汽车商城0.png in Resources */,
+				29BBA3EA1C2D18A700517FFC /* 支付宝0.png in Resources */,
 				29A088B61C2144610070EFB3 /* 7.png in Resources */,
 				292E83E41C1971B40063F964 /* 天路公考网9.png in Resources */,
 				292E83B21C1971B40063F964 /* 企业网站模板5.png in Resources */,
@@ -1509,6 +1668,7 @@
 				3CCCEB0D17B4E0F800750A12 /* bg_3.png in Resources */,
 				29A088CE1C2144D30070EFB3 /* ShoppingCartCell.xib in Resources */,
 				292E83A81C1971B40063F964 /* 从头开始网站1.png in Resources */,
+				29BBA3EB1C2D18A700517FFC /* 普达财务logo0.png in Resources */,
 				296CDE4B1C0EA14700D8F81A /* 26.jpg in Resources */,
 				2906E49C1C1E68A600A0E489 /* avatar@2x.png in Resources */,
 				29A088CC1C2144D30070EFB3 /* FoodCell.xib in Resources */,
@@ -1523,12 +1683,14 @@
 				292E83E51C1971B40063F964 /* 彼岸春风网站0.png in Resources */,
 				292E84141C1971B40063F964 /* 萤火虫网站2.png in Resources */,
 				292E83D51C1971B40063F964 /* 天路公考网11.png in Resources */,
+				29BBA3EF1C2D18A700517FFC /* 爱奇艺0.png in Resources */,
 				292E840B1C1971B40063F964 /* 浩德仪器网2.png in Resources */,
 				292E83981C1971B40063F964 /* 世纪鼎城4.png in Resources */,
 				292E83A21C1971B40063F964 /* 中诚通达汽车商城3.png in Resources */,
 				292E83BC1C1971B40063F964 /* 佳饰光网站8.png in Resources */,
 				3CCCEB0E17B4E0F800750A12 /* bg_3_iPad.jpg in Resources */,
 				292E83E91C1971B40063F964 /* 教育网站1.png in Resources */,
+				29BBA3F61C2D216900517FFC /* 加0.png in Resources */,
 				292E83E81C1971B40063F964 /* 教育网站0.png in Resources */,
 				292E83D81C1971B40063F964 /* 天路公考网14.png in Resources */,
 				3CCCEB0F17B4E0F800750A12 /* Default-568h@2x.png in Resources */,
@@ -1536,15 +1698,19 @@
 				3CCCEB1017B4E0F800750A12 /* Default.png in Resources */,
 				292E83DE1C1971B40063F964 /* 天路公考网3.png in Resources */,
 				292E83C01C1971B40063F964 /* 供暖信息报网站3.png in Resources */,
+				29BBA3E71C2D18A700517FFC /* 尚城同力0.png in Resources */,
 				292E83FA1C1971B40063F964 /* 李纯博个人网站3.png in Resources */,
 				292E83E11C1971B40063F964 /* 天路公考网6.png in Resources */,
 				292E83C51C1971B40063F964 /* 供暖信息报网站8.png in Resources */,
 				292E839C1C1971B40063F964 /* 中兴天安网站2.png in Resources */,
+				29BBA3E51C2D18A700517FFC /* 大成律师事务所0.png in Resources */,
 				292E83DD1C1971B40063F964 /* 天路公考网2.png in Resources */,
+				29BBA3E81C2D18A700517FFC /* 微盟0.png in Resources */,
 				292E83AD1C1971B40063F964 /* 企业网站模板0.png in Resources */,
 				29A088B41C2144610070EFB3 /* 5.png in Resources */,
 				3CCCEB1117B4E0F800750A12 /* Default@2x.png in Resources */,
 				296CDE411C0EA14700D8F81A /* 16.jpg in Resources */,
+				29BBA3F21C2D18A700517FFC /* 百度识图0.png in Resources */,
 				29A088B71C2144610070EFB3 /* 8.png in Resources */,
 				292E83E31C1971B40063F964 /* 天路公考网8.png in Resources */,
 				292E839B1C1971B40063F964 /* 中兴天安网站1.png in Resources */,
@@ -1561,6 +1727,7 @@
 				292E838F1C1971B40063F964 /* LULU花店商城3.png in Resources */,
 				292E841B1C1971B40063F964 /* 酒窖网站2.png in Resources */,
 				292E83C11C1971B40063F964 /* 供暖信息报网站4.png in Resources */,
+				29BBA3DB1C2D18A700517FFC /* 一汽丰田0.png in Resources */,
 				296CDE391C0EA14700D8F81A /* 8.jpg in Resources */,
 				292E83A61C1971B40063F964 /* 中诚通达汽车商城7.png in Resources */,
 				292E83B11C1971B40063F964 /* 企业网站模板4.png in Resources */,
@@ -1596,14 +1763,17 @@
 				292E83CD1C1971B40063F964 /* 回龙观社区网4.png in Resources */,
 				3CCCEB1817B4E0F800750A12 /* SecondViewController_iPhone.xib in Resources */,
 				292E83EE1C1971B40063F964 /* 教育网站6.png in Resources */,
+				29BBA3EE1C2D18A700517FFC /* 派多格0.png in Resources */,
 				296CDE341C0EA14700D8F81A /* 3.jpg in Resources */,
 				292E83BF1C1971B40063F964 /* 供暖信息报网站2.png in Resources */,
 				296CDE4A1C0EA14700D8F81A /* 25.jpg in Resources */,
 				292E83A91C1971B40063F964 /* 从头开始网站2.png in Resources */,
 				292E840E1C1971B40063F964 /* 电力工业网0.png in Resources */,
 				292E84071C1971B40063F964 /* 格瑞德曼8.png in Resources */,
+				29BBA3E01C2D18A700517FFC /* 中国铁道出版社0.png in Resources */,
 				292E83A01C1971B40063F964 /* 中诚通达汽车商城1.png in Resources */,
 				296CDE3C1C0EA14700D8F81A /* 11.jpg in Resources */,
+				29BBA3E61C2D18A700517FFC /* 天路公考网0.png in Resources */,
 				290A14B51C0D6EAF00C68EB9 /* cell-image@2x.png in Resources */,
 				292E84021C1971B40063F964 /* 格瑞德曼3.png in Resources */,
 				292E83AE1C1971B40063F964 /* 企业网站模板1.png in Resources */,
@@ -1627,6 +1797,7 @@
 				296CDE491C0EA14700D8F81A /* 24.jpg in Resources */,
 				292E83B41C1971B40063F964 /* 佳饰光网站0.png in Resources */,
 				292E83F01C1971B40063F964 /* 易巢网站0.png in Resources */,
+				29BBA3DC1C2D18A700517FFC /* 中信银行0.png in Resources */,
 				3CCCEB1C17B4E0F800750A12 /* ViewController_iPhone.xib in Resources */,
 				292E84101C1971B40063F964 /* 电力工业网2.png in Resources */,
 				292E83C61C1971B40063F964 /* 北京工业大学0.png in Resources */,
@@ -1634,6 +1805,7 @@
 				296CDE4C1C0EA14700D8F81A /* 15.jpg in Resources */,
 				292E839A1C1971B40063F964 /* 中兴天安网站0.png in Resources */,
 				292E84001C1971B40063F964 /* 格瑞德曼11.png in Resources */,
+				29BBA3BA1C2D137900517FFC /* BrandViewController.xib in Resources */,
 				296CDE451C0EA14700D8F81A /* 20.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1706,9 +1878,11 @@
 				3CCCEAE417B4E0A800750A12 /* UIView+ABExtras.m in Sources */,
 				29A088C41C2144960070EFB3 /* OverlayView.m in Sources */,
 				3CCCEAE517B4E0A800750A12 /* CubeNavigationController.m in Sources */,
+				29BBA3B51C2CE5FA00517FFC /* UIImage+UIImageExtras.m in Sources */,
 				296E1DD81C180E9500C2EE39 /* H5SecondViewController.m in Sources */,
 				2997D1701C156AF90060A592 /* BMKMapViewController.m in Sources */,
 				29A088DA1C214C550070EFB3 /* OrderViewController.m in Sources */,
+				29BBA3BD1C2D13AB00517FFC /* Reads.m in Sources */,
 				296E1DEB1C18358C00C2EE39 /* UIImage+UIImageExtras.m in Sources */,
 				3CCCEAE617B4E0A800750A12 /* FlipSquaresNavigationController.m in Sources */,
 				296C94061C1017D500232AD8 /* CCMPlayNDropView.m in Sources */,
@@ -1719,6 +1893,7 @@
 				29A088C31C2144960070EFB3 /* BadgeView.m in Sources */,
 				296CDE5A1C0EFD3900D8F81A /* RCDraggableButton.m in Sources */,
 				29CAD66E1C0C42FE00C3F576 /* PopMenu.m in Sources */,
+				29BBA3B91C2D137900517FFC /* BrandViewController.m in Sources */,
 				29CAD66C1C0C42FE00C3F576 /* MenuButton.m in Sources */,
 				29A088D11C2144FA0070EFB3 /* ShoppingCartView.m in Sources */,
 				296C94021C10170F00232AD8 /* CCMBorderView.m in Sources */,
