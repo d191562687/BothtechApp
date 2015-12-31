@@ -38,6 +38,7 @@
     //To change the template use AppCode | Preferences | File Templates.
 }
 
+
 - (id)initViewController
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -82,16 +83,14 @@
     
 
 
-    //CoverFlowView *coverFlowView = [CoverFlowView coverFlowViewWithFrame: frame andImages:_arrImages sidePieces:6 sideScale:0.35 middleScale:0.6];
-    CoverFlowView *coverFlowView = [CoverFlowView coverFlowViewWithFrame:self.view.frame andImages:_sourceImages sideImageCount:4 sideImageScale:0.5 middleImageScale:0.90];
+
+    CoverFlowView *coverFlowView = [CoverFlowView coverFlowViewWithFrame:self.view.frame andImages:_sourceImages sideImageCount:3 sideImageScale:0.5 middleImageScale:0.90];
     [self.CFView addSubview:coverFlowView];
     
     
     [self loadAvatarInKeyWindow];
     
-//    [self loadAvatarInCustomView];
-//    
-//    [self addControlButton];
+
     
 
 
@@ -121,39 +120,12 @@
         
         //More todo here.
         
-//        //卡片效果
-//        PlayNDropViewController * popin = [[PlayNDropViewController alloc] initWithNibName:@"PlayNDropViewController" bundle:nil];
-//       
-////        
-////        UIViewController *popin = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PlayNDropViewController"];
-//        popin.view.bounds = CGRectMake(0, 0, 300, 400);
-//        
-//        
-//        [popin setPopinTransitionStyle:BKTPopinTransitionStyleSnap];
-//        //[popin setPopinOptions:BKTPopinDisableAutoDismiss];
-//        BKTBlurParameters *blurParameters = [[BKTBlurParameters alloc] init];
-//        //blurParameters.alpha = 0.5;
-//        blurParameters.tintColor = [UIColor colorWithWhite:0 alpha:0.5];
-//        blurParameters.radius = 0.3;
-//        [popin setBlurParameters:blurParameters];
-//        [popin setPopinTransitionDirection:BKTPopinTransitionDirectionTop];
-//        //popin.presentingController = self;
-//        
-//        //Present popin on the desired controller
-//        //Note that if you are using a UINavigationController, the navigation bar will be active if you present
-//        // the popin on the visible controller instead of presenting it on the navigation controller
-//        [self presentPopinController:popin animated:YES completion:^{
-//            NSLog(@"Popin presented !");
-//        }];
-////
-//         [self.navigationController pushViewController:popin animated:YES];
-
-        
         
         //点击返回
         
         SecondViewController *secondVC = [[SecondViewController alloc] initViewController];
         [self.navigationController pushViewController:secondVC animated:YES];
+        
         
         [self removeAllFromKeyWindow];
         [self removeAllFromView];

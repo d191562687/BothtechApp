@@ -12,6 +12,7 @@
 #import "OverlayView.h"
 #import "ShoppingCartView.h"
 #import "BadgeView.h"
+#import "ViewController.h"
 
 #define kUIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -27,6 +28,7 @@
 @property ( nonatomic,assign) NSUInteger totalOrders;
 @property BOOL up;
 @property ( nonatomic,strong) ShoppingCartView * ShopCartView;
+@property ( nonatomic,strong) UILabel * titleLabel;
 
 
 
@@ -51,6 +53,8 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self = [[OrderViewController alloc] initWithNibName:@"OrderViewController" bundle:nil];
         
+        
+        
     }
     
     
@@ -59,43 +63,47 @@
 
 
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     /*
      这只是一个demo,用于显示界面效果,实际的数据请结合项目（如Json 解析放到数据模型里更方便一些）
      */
     
     NSDictionary *dic1 = @{@"id": @9323283,
-                           @"name": @"功能模块",
-                           @"min_price": @12.0,
+                           @"name": @"品牌设计",
+                           @"min_price": @888.0,
                            @"praise_num": @20,
                            @"picture":@"1.png",
                            @"month_saled":@12};
     
     NSDictionary *dic2 = @{@"id": @9323284,
-                           @"name": @"功能模块",
-                           @"min_price": @28.0,
+                           @"name": @"网站建设",
+                           @"min_price": @999.0,
                            @"praise_num": @6,
                            @"picture":@"2.png",
                            @"month_saled":@34};
     
     NSDictionary *dic3 = @{@"id": @9323285,
-                           @"name": @"功能模块",
-                           @"min_price": @28.0,
+                           @"name": @"移动应用",
+                           @"min_price": @2888.0,
                            @"praise_num": @8,
                            @"picture":@"3.png",
                            @"month_saled":@16};
     
     NSDictionary *dic4 = @{@"id": @26844943,
-                           @"name": @"功能模块",
-                           @"min_price": @32.0,
+                           @"name": @"互动营销",
+                           @"min_price": @3002.0,
                            @"praise_num": @1,
                            @"picture":@"4.png",
                            @"month_saled":@56};
     
     NSDictionary *dic5 = @{@"id": @9323279,
-                           @"name": @"功能模块",
-                           @"min_price": @29.0,
+                           @"name": @"软件开发",
+                           @"min_price": @2009.0,
                            @"praise_num": @11,
                            @"picture":@"5.png",
                            @"month_saled":@11};
@@ -135,24 +143,121 @@
                             @"picture":@"10.png",
                             @"month_saled":@136};
     
-            self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 1024, 768)];
+    self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 1024, 768)];
+    self.view.backgroundColor = [UIColor blackColor];
+    
+#pragma mark -设置导航栏
+//    //创建导航栏
+//    UINavigationBar *navbar=[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 1024,65)];
+//    navbar.backgroundColor = [UIColor blackColor];
+//    
+//    
+//    
+//
+//    //创建导航栏合集
+//    UINavigationItem *navitem=[[UINavigationItem alloc]initWithTitle:nil];
+//    [navbar pushNavigationItem:navitem animated:YES];
+//
+//    //添加左侧按钮
+//    UIImage *LeftImage = [UIImage imageNamed:@"返回image.png"];
+//    UIButton * letbutton = [[UIButton alloc]initWithFrame:CGRectMake(50, 10, 30, 25)];
+//    [letbutton addTarget:self action:@selector(clickLeftButton) forControlEvents:UIControlEventTouchUpInside];
+//    [letbutton setImage:LeftImage forState:UIControlStateNormal];
+//    UIBarButtonItem * leftbutton = [[UIBarButtonItem alloc]initWithCustomView:letbutton];
+//    [leftbutton setTintColor:[UIColor redColor]];
+//    [navitem setLeftBarButtonItem:leftbutton];
+//    //    navbar.barStyle = UIBarStyleBlack;
+//    
+//    //设置导航栏内容
+//    [navitem setLeftBarButtonItem:leftbutton];
+//    //标题
+//    _titleLabel = [[UILabel alloc]init];
+//    _titleLabel.frame = CGRectMake(0, 0, 35, 35);
+//    _titleLabel.textColor = [UIColor blackColor];
+//    _titleLabel.font=[UIFont fontWithName:@"GurmukhiMN-Bold" size:22];
+//    _titleLabel.textAlignment =  YES;
+//    _titleLabel.text = @"套餐选择";
+//    navitem.titleView = _titleLabel;
+//    
+//    [self.view addSubview:navbar];
+
+    self.nBarView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,50)];
+    [self.nBarView setBackgroundColor:[UIColor blackColor]];
+    [self.view addSubview:self.nBarView];
+    
+    //返回
+    UIImage *LeftImage = [UIImage imageNamed:@"返回image.png"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setImage:LeftImage forState:UIControlStateNormal];
+  
+    button.frame = CGRectMake(10, 15, 40, 40);
+    [button addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+
+    //工具
+    UIImage * RightImage = [UIImage imageNamed:@"工具.png"];
+    UIButton *buttonB = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [buttonB setImage:RightImage forState:UIControlStateNormal];
+    
+    
+    buttonB.frame = CGRectMake(970, 17, 40, 40);
+    [buttonB addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    
+    
+       //标题
+        _titleLabel = [[UILabel alloc]init];
+        _titleLabel.frame = CGRectMake(400, 20, 200, 35);
+        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.font=[UIFont fontWithName:@"GurmukhiMN-Bold" size:22];
+        _titleLabel.textAlignment =  YES;
+        _titleLabel.text = @"套餐选择";
+
+
+    [self.nBarView addSubview:_titleLabel];
+    [self.nBarView addSubview:button];
+    [self.nBarView addSubview:buttonB];
+    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+
     
     //这样书写的定义数据，用于后面的动态添加订单个数的key：orderCount。 实际项目中没有这么复杂
     _dataArray = [@[[dic1 mutableCopy],[dic2 mutableCopy],[dic3 mutableCopy],[dic4 mutableCopy],[dic5 mutableCopy],[dic6 mutableCopy],[dic7 mutableCopy],[dic8 mutableCopy],[dic9 mutableCopy],[dic10 mutableCopy]] mutableCopy];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 20)];
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"图层-1@2x.png"]];
+    
+    
+    
+    
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 65, self.view.bounds.size.width, self.view.bounds.size.height - 70)];
+    //self.tableView.backgroundColor = [UIColor whiteColor];
+    [self.tableView setBackgroundView:backgroundView];
+    
+    self.tableView.separatorColor = [UIColor grayColor];
+    
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);        // 设置端距，这里表示separator离左边和右边均80像素
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     
     
-    _ShopCartView = [[ShoppingCartView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 50, CGRectGetWidth(self.view.bounds), 50) inView:self.view withObjects:nil];
+    _ShopCartView = [[ShoppingCartView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 70, CGRectGetWidth(self.view.bounds), 70) inView:self.view withObjects:nil];
     _ShopCartView.parentView = self.view;
     _ShopCartView.OrderList.delegate = self;
     _ShopCartView.OrderList.tableView.delegate = self;
     _ShopCartView.OrderList.tableView.dataSource = self;
-    _ShopCartView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _ShopCartView.backgroundColor = [UIColor blackColor];
+    
+    
+//    UIImageView * backgroundViews = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"123qqq.png"]];
+//    
+//    [_ShopCartView.OrderList.tableView setBackgroundView:backgroundView];
+//    
+//    
     [self.view addSubview:_ShopCartView];
     
     
@@ -162,7 +267,7 @@
     _endPointY = rect.origin.y + 35;
     
 
-    [self loadAvatarInKeyWindow];
+  //  [self loadAvatarInKeyWindow];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -175,6 +280,12 @@
         
     }
     return _ordersArray;
+}
+
+#pragma mark -导航栏上的按钮方法
+-(void)backAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -201,6 +312,37 @@
     return 1;
 }
 
+
+//设置cell背景色
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+ 
+//    cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"333.png"]]; //cell的背景图
+//    cell.textLabel.backgroundColor = [UIColor redColor];
+    
+    cell.backgroundColor = indexPath.row % 2?[UIColor colorWithRed: 240.0/255 green: 240.0/255 blue: 240.0/255 alpha: 1.0]: [UIColor whiteColor];
+    
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+//{
+//    if ([tableView isEqual:self.tableView]) {
+//        NSLog(@"选中FoodCell");
+//    }
+//}
+
+
+
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = nil;
@@ -208,6 +350,8 @@
         static NSString * cellID = @"FoodCell";
         
         FoodCell * cell = (FoodCell *) [tableView dequeueReusableCellWithIdentifier:cellID];
+        
+        
    
         
         if (!cell) {
@@ -219,7 +363,9 @@
             
             cell.name.text = _dataArray[indexPath.row][@"name"];
             cell.price.text = [NSString stringWithFormat:@"￥%.0f",price];
-            cell.month_saled.text = [NSString stringWithFormat:@"已售%ld",(long)nSaledNum];
+//            cell.month_saled.text = [NSString stringWithFormat:@"已售%ld",(long)nSaledNum];
+            cell.month_saled.text = [NSString stringWithFormat:@"【 套餐一 】"];
+
             cell.praise_num.text = [NSString stringWithFormat:@"%ld",(long)nPraiseNum];
             cell.foodImageView.image = [UIImage imageNamed:_dataArray[indexPath.row][@"picture"]];
             cell.foodId = [_dataArray[indexPath.row][@"id"] integerValue];
@@ -278,6 +424,7 @@
         cell.numberLabel.text = [NSString stringWithFormat:@"%ld",count];
         
         cell.backgroundColor = [[UIColor whiteColor]colorWithAlphaComponent:0.6];
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (indexPath.section % 3 == 0) {
             cell.dotLabel.textColor = [UIColor greenColor];
@@ -403,16 +550,16 @@
 {
     if ([tableView isEqual:self.tableView])
     {
-        return 90;
+        return 120;
     }
     else if ([tableView isEqual:self.ShopCartView.OrderList.tableView])
     {
-        return 50;
+        return 90;
     }
-    return 90;
+    return 120;
 }
 
-#define SECTION_HEIGHT 30.0
+#define SECTION_HEIGHT 40.0
 // 设置section的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
@@ -427,23 +574,24 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, SECTION_HEIGHT)];
+    
     UILabel *leftLine = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 3, SECTION_HEIGHT)];
     [view addSubview:leftLine];
     
     UILabel *headerTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, SECTION_HEIGHT)];
     headerTitle.text = [NSString stringWithFormat:@"%ld号口袋",section +1];
-    headerTitle.font = [UIFont systemFontOfSize:12];
+    headerTitle.font = [UIFont systemFontOfSize:17];
     [view addSubview:headerTitle];
     
     if (section == 0) {
         
         leftLine.backgroundColor = [UIColor greenColor];
         UIButton *clear = [UIButton buttonWithType:UIButtonTypeCustom];
-        clear.frame= CGRectMake(self.view.bounds.size.width - 100, 0, 100, SECTION_HEIGHT);
+        clear.frame= CGRectMake(self.view.bounds.size.width - 120, 0, 120, SECTION_HEIGHT);
         [clear setTitle:@"清空购物车" forState:UIControlStateNormal];
         [clear setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         clear.titleLabel.textAlignment = NSTextAlignmentCenter;
-        clear.titleLabel.font = [UIFont systemFontOfSize:12];
+        clear.titleLabel.font = [UIFont systemFontOfSize:17];
         [clear addTarget:self action:@selector(clearShoppingCart:) forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:clear];
     }
@@ -468,12 +616,7 @@
     return view;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    if ([tableView isEqual:self.tableView]) {
-        NSLog(@"选中FoodCell");
-    }
-}
+
 
 
 #pragma mark - private method

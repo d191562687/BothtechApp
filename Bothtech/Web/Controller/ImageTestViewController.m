@@ -110,7 +110,7 @@
     scrollView.backgroundColor  =[UIColor redColor];
     scrollView = [[UIScrollView alloc] init];
     scrollView.delegate = self;
-    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*_imageArray.count+20, 200);
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*_imageArray.count, 200);
     scrollView.frame = CGRectMake(0, 0, SIZE.width, SIZE.height);
     scrollView.pagingEnabled=YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -132,7 +132,7 @@
         //
         
         float w = SIZE.width;
-        float h = SIZE.height;
+        float h = SIZE.height - 50;
         float x = i*w;
         float y = 0;
         

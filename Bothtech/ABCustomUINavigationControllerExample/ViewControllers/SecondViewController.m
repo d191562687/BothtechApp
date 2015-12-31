@@ -12,12 +12,15 @@
 #import "FlipSquaresNavigationController.h"
 #import "MMGridViewDefaultCell.h"
 #import "ViewController.h"
-#import <MaryPopin/UIViewController+MaryPopin.h>
+
+
 
 @interface SecondViewController ()
 - (IBAction)popViewController:(id)sender;
 - (void)reload;
 - (void)setupPageControl;
+
+
 
 @end
 
@@ -47,6 +50,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+ 
     // Do any additional setup after loading the view from its nib.
     // Give us a nice title
     self.title = @"MMGridView Demo";
@@ -69,6 +74,9 @@
 
 }
 
+
+
+
 #pragma 悬浮按钮
 
 - (void)loadAvatarInKeyWindow {
@@ -89,6 +97,8 @@
         //More todo here.
         ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
         [self.navigationController popToViewController:firstVC animated:YES];
+
+  
         
         [self removeAllFromView];
         [self removeAllFromKeyWindow];

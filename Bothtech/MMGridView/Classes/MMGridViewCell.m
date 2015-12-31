@@ -72,7 +72,7 @@
         switch ([touch tapCount]) 
         {
             case 1:
-                [gridView performSelector:singleTapSelector withObject:self afterDelay:.3];
+                [gridView performSelector:singleTapSelector withObject:self afterDelay:0.3];
                 break;
                 
             case 2:

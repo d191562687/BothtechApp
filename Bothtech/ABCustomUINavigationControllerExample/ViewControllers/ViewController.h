@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController
 
 - (id)initViewController;
+- (void)showMenu;
 
 @end

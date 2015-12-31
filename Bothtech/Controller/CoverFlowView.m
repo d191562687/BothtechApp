@@ -89,7 +89,7 @@
 
         
         //动画速度
-        [CATransaction setAnimationDuration:1];
+        [CATransaction setAnimationDuration:2];
         originLayer.position = targetTemplate.position;
         originLayer.zPosition = targetTemplate.zPosition;
         originLayer.transform = targetTemplate.transform;

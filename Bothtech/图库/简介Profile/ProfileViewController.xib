@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="hwF-QS-BGg">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="hwF-QS-BGg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2yU-BU-aDM"/>
+                <constraint firstAttribute="bottom" secondItem="hwF-QS-BGg" secondAttribute="bottom" id="Acf-Lv-oJm"/>
+                <constraint firstItem="hwF-QS-BGg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ouj-hL-kjb"/>
+                <constraint firstAttribute="trailing" secondItem="hwF-QS-BGg" secondAttribute="trailing" id="Rb5-Io-DA6"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="图层-1.png" width="512" height="384"/>
+    </resources>
+</document>

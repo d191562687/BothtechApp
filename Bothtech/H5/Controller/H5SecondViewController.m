@@ -1,15 +1,41 @@
 #import "H5SecondViewController.h"
-#import "ThirthViewController.h"
+#import "UIImageView+WebCache.h"
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "UIImage+UIImageExtras.h"
 #import "ViewController.h"
-#import "FlipSquaresNavigationController.h"
-#import "MMGridViewDefaultCell.h"
-#import "ViewController.h"
-#import <MaryPopin/UIViewController+MaryPopin.h>
+#import "ReadH5.h"
+#import "H5ThirthViewController.h"
 
-@interface H5SecondViewController ()
-
-- (void)reload;
-- (void)setupPageControl;
+@interface H5SecondViewController (){
+    
+    UIImageView * ImageBackView;
+    
+    
+    //拖过来的
+    NSMutableArray *_Imagearray;
+    NSMutableArray *_photos;
+    
+    UIScrollView *_scrollView;//图片展示滚动视图
+    UIScrollView *_myScrollView;
+    
+    UIImageView *_imageview;
+    
+    int _BtnW;
+    int _BtnWS;
+    int _BtnX;
+    int _BtnH;
+    
+    int _getEndImageYH;
+    
+    
+    UILabel *_Titlelabel;
+    
+    
+    UIButton *_imageButton;
+}
+#define NavgationBarH 64
 
 @end
 
@@ -19,52 +45,252 @@
 
 
 
-- (void)viewDidUnload {
-    gridView = nil;
-    pageControl = nil;
-    [super viewDidUnload];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+        
+        
+    }
+    
+    return self;
+    //To change the template use AppCode | Preferences | File Templates.
 }
 
 - (id)initViewController
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self = [[H5SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
-    } else {
-        self = [[H5SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
+        self = [[H5SecondViewController alloc] initWithNibName:@"H5SecondViewController" bundle:nil];
+        
     }
+    
     
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    // Give us a nice title
-    self.title = @"MMGridView Demo";
     
-    // Create a reload button
-    UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                  target:self
-                                                                                  action:@selector(reload)];
-    self.navigationItem.rightBarButtonItem = reloadButton;
+    //初始化数据
+    [self initDataSource];
     
-    // setup the page control
-    [self setupPageControl];
+    [self didApper];
     
+
     //按钮
     [self loadAvatarInKeyWindow];
     
-    //    [self loadAvatarInCustomView];
     
-    //  [self addControlButton];
+}
+
+
+-(void)didApper{
+    _myScrollView.frame = CGRectMake(0, 0, 1024, 768);
+    NSLog(@"w = %f h = %f",SIZE.width,SIZE.height);
+    
+    _myScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 9 - 32 ,self.view.frame.size.height);
+    _myScrollView.frame = CGRectMake(0, 0, 1024, 768);
+    _myScrollView.pagingEnabled = YES;
+    _myScrollView.showsHorizontalScrollIndicator = NO;
+    NSLog(@"两个要不一样啊  %f",SIZE.width);
+    [self Hengping];
+    
+}
+
+
+-(void)initDataSource
+{
+    
+    _user = [NSUserDefaults standardUserDefaults];
+    
+    _myScrollView = [[UIScrollView alloc] init];
+    [self.view addSubview: _myScrollView];
+    
+    
+}
+
+-(void)LayoutImage1:(int)NUM
+{
+    for (UIView * view  in _myScrollView.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    
+    
+    ReadH5 *read = [[ReadH5 alloc]init];
+    
+    int BtnHS = 50;
+    int BtnY = 55;
+    
+    int i = 0;
+    for (i = 0; i <[[read ImageArray] count]; i++ ){
+        
+        
+        _imageview.backgroundColor = [UIColor blueColor];
+        
+        
+        //获得图片数组中的第一个图   --- ---
+        NSString *Pa = [NSString stringWithFormat:@"%@0",[read ImageMethod:i]];
+        
+        
+        [_imageview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(BtnClick:)]];
+        
+        _imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _imageButton.frame = CGRectMake( (_BtnW+_BtnWS) * (i%NUM) + _BtnX +5, (_BtnH+BtnHS) *(i/NUM) + BtnY, _BtnW, _BtnH );
+        [_imageButton addTarget:self action:@selector(BtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        _imageButton.tag = 10000+i;
+        [_imageButton addSubview:_imageView];
+        [_imageButton setBackgroundColor:[UIColor redColor]];
+        [_imageButton setBackgroundImage:[UIImage imageNamed:Pa] forState:UIControlStateNormal];
+        [_myScrollView addSubview:_imageButton];
+        
+        
+        
+        [self TitleLabel:i];
+    }
+    _getEndImageYH = (_BtnH+BtnHS) *(i/NUM) + BtnY ;
+    
+}
+
+
+//TitleLabel
+-(void)TitleLabel:(int)number
+{
+    ReadH5 *read = [[ReadH5 alloc]init];
+    float x = _imageButton.frame.origin.x ;
+    float y = _imageButton.frame.origin.y ;
+    
+    _Titlelabel = [[UILabel alloc] init];
+    _Titlelabel.frame = CGRectMake(x, y+_imageButton.frame.size.height+6 , 270, 30);
+    _Titlelabel.text = [read ImageArray][number];
+    _Titlelabel.textColor = [UIColor blackColor];
+    _Titlelabel.textAlignment = NSTextAlignmentCenter;
+    _Titlelabel.font = [UIFont fontWithName:@"Helvetica" size:24];
+    
+    [_myScrollView addSubview:_Titlelabel];
+}
+
+
+//检测设备旋转方向
+
+- (BOOL)shouldAutorotate{
+    
+    return YES;
+}
+
+-(void)hengshu
+{
+    
+    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight || self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+        [self Shuping];
+    }else {
+        //纵向执行
+        //竖屏view显示方法
+        [self Hengping];
+    }
+    
+}
+
+
+#pragma mark - 点击跳转
+-(void)BtnClick:(UIButton *)imageTap
+{
+    
+    // 1.封装图片数据
+    
+    ReadH5 *read = [[ReadH5 alloc]init];
+    NSUInteger count = [[read Branch:(imageTap.tag - 10000)] count];
+    
+    NSMutableArray *img = [[NSMutableArray alloc] init];
+    _photos = [NSMutableArray arrayWithCapacity:count];
+    
+    for (int i = 0; i<count; i++) {
+        // 替换为中等尺寸图片
+        NSString *path = [read Branch:(imageTap.tag - 10000)][i];
+        
+        [img addObject:path];
+    }
+    
+    // 2.显示相册
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    
+    browser.currentPhotoIndex = 0; // 弹出相册时显示的第一张图片是？
+    browser.photos = _photos; // 设置所有的图片
+    
+    
+    H5ThirthViewController *ivc = [[H5ThirthViewController alloc] init];
+    
+    ivc.imageArray = img ;
+    ivc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    NSLog(@"%d",_photos.count);
+    [self.navigationController pushViewController:ivc animated:YES];
+    
+
+    ////
+    ////    [self flipToViewController:ivc fromView:imageTap withCompletion:NULL];
+    
+    
+    //
+    //    [self presentViewController:ivc animated:YES completion:nil];
+    //
+    //    [self removeAllFromKeyWindow];
+    //    [self removeAllFromView];
+    
+    
+    
+}
+
+#pragma mark - 横竖屏方法
+//测试
+-(void)hengpingTest{
+    _BtnW = 170;//宽
+    _BtnWS = 30;//左右间距
+    _BtnX = 20;//x
+    _BtnH = 130;//高
+    [self LayoutImage1:5];
+    
+}
+
+-(void)shupingTest{
+    _BtnW = 170;//宽
+    _BtnWS = 20;//左右间距
+    _BtnX = 10;//x
+    _BtnH = 130;//高
+    [self LayoutImage1:4];
+    
+}
+
+//
+-(void)Hengping
+{
+    
+    _BtnW = 335;//宽
+    _BtnWS = 5;//左右间距
+    _BtnX = 0;//x
+    _BtnH = 603;//高
+    
+    [self LayoutImage1:9];
+}
+
+-(void)Shuping
+{
+    _BtnW = 170;//宽            SIZE.width/5
+    _BtnWS = 20;//左右间距       SIZE.width/5*(2/13)
+    _BtnX = 10;//x
+    _BtnH = 130;//高
+    [self LayoutImage1:4];
+    
+    
     
 }
 
 #pragma 悬浮按钮
 
 - (void)loadAvatarInKeyWindow {
-    RCDraggableButton *avatar = [[RCDraggableButton alloc] initInKeyWindowWithFrame:CGRectMake(900, 630, 110, 110)];
+    
+    RCDraggableButton * avatar = [[RCDraggableButton alloc] initInKeyWindowWithFrame:CGRectMake(900, 630, 90, 90)];
     [avatar setBackgroundImage:[UIImage imageNamed:@"avatar"] forState:UIControlStateNormal];
     
     [avatar setLongPressBlock:^(RCDraggableButton *avatar) {
@@ -120,94 +346,6 @@
     }];
 }
 
-- (void)loadAvatarInCustomView {
-    UIView *customView = nil;
-    if ([self.view viewWithTag:89]) {
-        customView = [self.view viewWithTag:89];
-    } else {
-        customView = [[UIView alloc] initWithFrame:CGRectMake(10, 64, 300, 200)];
-        [customView setBackgroundColor:[UIColor colorWithWhite:0.1 alpha:0.0]];
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
-        
-        imageView.image = [[UIImage imageNamed:@"image.jpg"]stretchableImageWithLeftCapWidth:10 topCapHeight:10];
-        
-        [self.view addSubview:imageView];
-        
-        [customView setTag:89];
-        [self.view addSubview:customView];
-    }
-    RCDraggableButton *avatar = [[RCDraggableButton alloc] initInView:customView WithFrame:CGRectMake(120, 60, 130, 110)];
-    [avatar setBackgroundImage:[UIImage imageNamed:@"avatar1"] forState:UIControlStateNormal];
-    [avatar setAutoDocking:NO];
-    
-    avatar.longPressBlock = ^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in customView ===  LongPress!!! ===");
-        //More todo here.
-        
-    };
-    
-    avatar.tapBlock = ^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in customView ===  Tap!!! ===");
-        //More todo here.
-        
-    };
-    
-    avatar.draggingBlock = ^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in customView === Dragging!!! ===");
-        //More todo here.
-        
-    };
-    
-    avatar.dragDoneBlock = ^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in customView === DragDone!!! ===");
-        //More todo here.
-        
-        
-    };
-    
-    avatar.autoDockingBlock = ^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in customView === AutoDocking!!! ===");
-        //More todo here.
-        
-    };
-    
-    avatar.autoDockingDoneBlock = ^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in customView === AutoDockingDone!!! ===");
-        //More todo here.
-        
-    };
-}
-
-- (void)addControlButton {
-    RCDraggableButton *removeAllFromKeyWindow = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(10, 280, 300, 44)];
-    [removeAllFromKeyWindow addTarget:self action:@selector(removeAllFromKeyWindow) forControlEvents:UIControlEventTouchUpInside];
-    [removeAllFromKeyWindow setTitle:@"Remove All From KeyWindow" forState:UIControlStateNormal];
-    [removeAllFromKeyWindow setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [removeAllFromKeyWindow setDraggable:NO];
-    [self.view addSubview:removeAllFromKeyWindow];
-    
-    RCDraggableButton *addOneToKeyWindow = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(10, 330, 300, 44)];
-    [addOneToKeyWindow addTarget:self action:@selector(loadAvatarInKeyWindow) forControlEvents:UIControlEventTouchUpInside];
-    [addOneToKeyWindow setTitle:@"Add One To KeyWindow" forState:UIControlStateNormal];
-    [addOneToKeyWindow setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [addOneToKeyWindow setDraggable:NO];
-    [self.view addSubview:addOneToKeyWindow];
-    
-    RCDraggableButton *removeAllFromView = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(10, 380, 300, 44)];
-    [removeAllFromView addTarget:self action:@selector(removeAllFromView) forControlEvents:UIControlEventTouchUpInside];
-    [removeAllFromView setTitle:@"Remove All From View" forState:UIControlStateNormal];
-    [removeAllFromView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [removeAllFromView setDraggable:NO];
-    [self.view addSubview:removeAllFromView];
-    
-    RCDraggableButton *addOneToView = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(10, 430, 300, 44)];
-    [addOneToView addTarget:self action:@selector(loadAvatarInCustomView) forControlEvents:UIControlEventTouchUpInside];
-    [addOneToView setTitle:@"Add One To View" forState:UIControlStateNormal];
-    [addOneToView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [addOneToView setDraggable:NO];
-    [self.view addSubview:addOneToView];
-}
-
 - (void)removeAllFromKeyWindow {
     [RCDraggableButton removeAllFromKeyWindow];
 }
@@ -216,82 +354,8 @@
     [RCDraggableButton removeAllFromView:[self.view viewWithTag:89]];
 }
 
+//--------------------------按钮
 
-//-------------------------------------悬空按钮
-
-
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait ||
-            interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-            interfaceOrientation == UIInterfaceOrientationLandscapeRight);
-}
-
-
-- (void)reload
-{
-    [gridView reloadData];
-}
-
-
-- (void)setupPageControl
-{
-    pageControl.numberOfPages = gridView.numberOfPages;
-    pageControl.currentPage = gridView.currentPageIndex;
-}
-
-// ----------------------------------------------------------------------------------
-
-#pragma - MMGridViewDataSource
-
-- (NSInteger)numberOfCellsInGridView:(MMGridView *)gridView
-{
-    return 42;
-}
-
-
-- (MMGridViewCell *)gridView:(MMGridView *)gridView cellAtIndex:(NSUInteger)index
-{
-    MMGridViewDefaultCell *cell = [[MMGridViewDefaultCell alloc] initWithFrame:CGRectNull];
-    cell.textLabel.text = [NSString stringWithFormat:@"Cell %lu", (unsigned long)index];
-    cell.imageView.image = [UIImage imageNamed:@"cell-image.png"];
-    
-    return cell;
-}
-
-// ----------------------------------------------------------------------------------
-
-#pragma - MMGridViewDelegate
-
-- (void)gridView:(MMGridView *)gridView didSelectCell:(MMGridViewCell *)cell atIndex:(NSUInteger)index
-{
-    
-    ThirthViewController *thirthVC = [[ThirthViewController alloc] initViewController];
-    [self.navigationController pushViewController:thirthVC animated:YES];
-    
-    [self removeAllFromKeyWindow];
-    [self removeAllFromView];
-}
-
-
-- (void)gridView:(MMGridView *)gridView didDoubleTapCell:(MMGridViewCell *)cell atIndex:(NSUInteger)index
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:[NSString stringWithFormat:@"Cell at index %lu was double tapped.", (unsigned long)index]
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Cool!"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-
-
-- (void)gridView:(MMGridView *)theGridView changedPageToIndex:(NSUInteger)index
-{
-    [self setupPageControl];
-}
 
 
 
@@ -299,15 +363,31 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+#pragma mark - SLCoverFlowViewDataSource
+
+
+
+- (IBAction)back:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+    
+    
 }
 
-- (BOOL)shouldAutorotate
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES;
+    // Return YES for supported orientations
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 
+
+
+- (void)reload{
+    
+    
+}
 
 @end
-

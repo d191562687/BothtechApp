@@ -11,4 +11,7 @@
 
 @interface OrderViewController : ViewController
 
+@property (nonatomic,strong) UIView *nBarView;
+
+
 @end

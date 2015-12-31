@@ -80,19 +80,20 @@
     
     
     //购物金额提示框
-    _money = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, self.bounds.size.width, 30)];
+    _money = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, self.bounds.size.width, 45)];
     [_money setTextColor:[UIColor grayColor]];
-    [_money setText:@"购物车空空如也~"];
-    [_money setFont:[UIFont systemFontOfSize:13.0]];
+    [_money setText:@"购物为空"];
+    [_money setFont:[UIFont systemFontOfSize:17.0]];
     [self addSubview:_money];
     
     //结账按钮
     _accountBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _accountBtn.layer.cornerRadius = 5;
+   // _accountBtn.layer.cornerRadius = 5;
     _accountBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    _accountBtn.frame = CGRectMake(self.bounds.size.width - 100, 5, 90,35);
+    _accountBtn.frame = CGRectMake(self.bounds.size.width - 140, 10, 110,45);
     _accountBtn.backgroundColor = [UIColor lightGrayColor];
-    [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",_minFreeMoney] forState:UIControlStateNormal];
+//    [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",_minFreeMoney] forState:UIControlStateNormal];
+    [_accountBtn setBackgroundImage:[UIImage imageNamed:@"订单22.png"] forState:UIControlStateNormal];
     [_accountBtn addTarget:self action:@selector(pay:) forControlEvents:UIControlEventTouchUpInside];
     _accountBtn.enabled = NO;
     [self addSubview:_accountBtn];
@@ -101,7 +102,7 @@
     _shoppingCartBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_shoppingCartBtn setUserInteractionEnabled:NO];
     [_shoppingCartBtn setBackgroundImage:[UIImage imageNamed:@"cart"] forState:UIControlStateNormal];
-    _shoppingCartBtn.frame = CGRectMake(10, -15, 60,60);
+    _shoppingCartBtn.frame = CGRectMake(self.bounds.size.width - 185, 9, 45,46);
     [_shoppingCartBtn addTarget:self action:@selector(clickCartBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_shoppingCartBtn];
     
@@ -261,13 +262,15 @@
         if (value > 0) {
             
             _accountBtn.enabled = NO;
-            [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",(long)value] forState:UIControlStateNormal];
+//            [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",(long)value] forState:UIControlStateNormal];
+             [_accountBtn setBackgroundImage:[UIImage imageNamed:@"订单22.png"] forState:UIControlStateNormal];
             [_accountBtn setBackgroundColor:[UIColor grayColor]];
         }
         else
         {
             _accountBtn.enabled = YES;
-            [_accountBtn setTitle:@"选好了" forState:UIControlStateNormal];
+      //      [_accountBtn setTitle:@"选好了" forState:UIControlStateNormal];
+            [_accountBtn setBackgroundImage:[UIImage imageNamed:@"订单11.png"] forState:UIControlStateNormal];
             [_accountBtn setBackgroundColor:[UIColor redColor]];
         }
         
@@ -275,12 +278,13 @@
     }
     else
     {
-        [_money setTextColor:[UIColor grayColor]];
-        [_money setText:@"购物车空空如也~"];
-        [_money setFont:[UIFont systemFontOfSize:13.0]];
+        [_money setTextColor:[UIColor whiteColor]];
+        [_money setText:@"购物车为空"];
+        [_money setFont:[UIFont systemFontOfSize:18.0]];
         
         _accountBtn.enabled = NO;
-        [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",_minFreeMoney] forState:UIControlStateNormal];
+//        [_accountBtn setTitle:[NSString stringWithFormat:@"还差￥%ld",_minFreeMoney] forState:UIControlStateNormal];
+         [_accountBtn setBackgroundImage:[UIImage imageNamed:@"订单22.png"] forState:UIControlStateNormal];
         [_accountBtn setBackgroundColor:[UIColor grayColor]];
         
         [_shoppingCartBtn setUserInteractionEnabled:NO];

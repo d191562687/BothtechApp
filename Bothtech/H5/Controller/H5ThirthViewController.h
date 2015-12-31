@@ -10,4 +10,6 @@
 
 @interface H5ThirthViewController : ViewController
 
+@property (nonatomic,retain) NSMutableArray *imageArray;
+
 @end

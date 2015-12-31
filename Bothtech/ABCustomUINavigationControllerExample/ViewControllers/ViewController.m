@@ -15,6 +15,7 @@
 #import "WebViewController.h"
 #import "OrderViewController.h"
 #import "BrandViewController.h"
+#import "ProfileViewController.h"
 
 
 #import "PopMenu.h"
@@ -45,6 +46,21 @@
     return self;
 }
 
+#pragma 隐藏状态栏
+//- (UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    return UIStatusBarStyleDefault;
+//    //UIStatusBarStyleDefault = 0 黑色文字，浅色背景时使用
+//    //UIStatusBarStyleLightContent = 1 白色文字，深色背景时使用
+//}
+//
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES; // 返回NO表示要显示，返回YES将hiden
+//}
+
+
+
 //gif
 - (UIWebView *)gifImage
 {
@@ -56,6 +72,8 @@
         // 读取gif图片数据
         NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"guzhang" ofType:@"gif"]];
         
+
+        
         //webView
         _gifImage = [[UIWebView alloc] initWithFrame:frame];
         _gifImage.backgroundColor = [UIColor blackColor];
@@ -64,12 +82,12 @@
         [_gifImage loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
         [self.iconView addSubview:_gifImage];
         
-        //按钮
-        self.mainButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 + 20, self.view.frame.size.height/2 - 220, 200, 190)];
-        self.mainButton.tag = 9999;
-        [self.mainButton setImage:[UIImage imageNamed:@"QQ.png"] forState:UIControlStateNormal];
-        [self.mainButton addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside];
-        [self.iconView addSubview:self.mainButton];
+//        //按钮
+//        self.mainButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2 + 20, self.view.frame.size.height/2 - 220, 200, 190)];
+//        self.mainButton.tag = 9999;
+//        [self.mainButton setImage:[UIImage imageNamed:@"QQ.png"] forState:UIControlStateNormal];
+//        [self.mainButton addTarget:self action:@selector(butClick) forControlEvents:UIControlEventTouchUpInside];
+//        [self.iconView addSubview:self.mainButton];
         
         
     }
@@ -82,10 +100,42 @@
 {
     [super viewDidLoad];
     
+    
     [self gifImage];
     
     [self.navigationController setNavigationBarHidden:YES];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    
+//    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"])
+//        
+//    {
+//        
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+//        
+//        NSLog(@"第一次");
+//        
+//        
+//        [self gifImage];
+//        
+//        [self.navigationController setNavigationBarHidden:YES];
+//        // Do any additional setup after loading the view, typically from a nib.
+//
+//              
+//
+//              
+//     } else {
+//         
+//         [self gifImage];
+//         [self showMenu];
+//         
+//         [self.navigationController setNavigationBarHidden:YES];            NSLog(@"第二2222");
+//         
+//        // [self showMenu];
+//                        
+//   
+//                        
+//    }
+    
 }
 
 
@@ -185,8 +235,11 @@
             BrandViewController * brandVC = [[BrandViewController alloc] initViewController];
             [self.navigationController pushViewController:brandVC animated:YES];
         }
+        if ([selectedItem.title  isEqual: @"关于我们"]) {
+            ProfileViewController * profileVC = [[ProfileViewController alloc]initViewController];
+            [self.navigationController pushViewController:profileVC animated:YES];
+        }
 
-        
     };
     
     [_popMenu showMenuAtView:self.view];

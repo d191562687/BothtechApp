@@ -13,17 +13,25 @@
 
 - (void)awakeFromNib {
     // Initialization code
+  
+    
+    
+   
+    
     
     self.amount = 0;
     self.foodImageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.foodImageView.layer.cornerRadius = 5;
+  //  self.foodImageView.layer.cornerRadius = 5;
     self.foodImageView.layer.masksToBounds = YES;
-    self.foodImageView.backgroundColor = [UIColor whiteColor];
+    self.foodImageView.backgroundColor = [UIColor clearColor];
+    
+    
+   
   
     [self.minus setHidden:YES];
     [self.orderCount setHidden:YES];
     
-    [self bringSubviewToFront:self.plusImageView];
+    [self bringSubviewToFront:self.foodImageView];
 }
 
 
