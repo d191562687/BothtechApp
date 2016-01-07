@@ -147,39 +147,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     
 #pragma mark -设置导航栏
-//    //创建导航栏
-//    UINavigationBar *navbar=[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 1024,65)];
-//    navbar.backgroundColor = [UIColor blackColor];
-//    
-//    
-//    
-//
-//    //创建导航栏合集
-//    UINavigationItem *navitem=[[UINavigationItem alloc]initWithTitle:nil];
-//    [navbar pushNavigationItem:navitem animated:YES];
-//
-//    //添加左侧按钮
-//    UIImage *LeftImage = [UIImage imageNamed:@"返回image.png"];
-//    UIButton * letbutton = [[UIButton alloc]initWithFrame:CGRectMake(50, 10, 30, 25)];
-//    [letbutton addTarget:self action:@selector(clickLeftButton) forControlEvents:UIControlEventTouchUpInside];
-//    [letbutton setImage:LeftImage forState:UIControlStateNormal];
-//    UIBarButtonItem * leftbutton = [[UIBarButtonItem alloc]initWithCustomView:letbutton];
-//    [leftbutton setTintColor:[UIColor redColor]];
-//    [navitem setLeftBarButtonItem:leftbutton];
-//    //    navbar.barStyle = UIBarStyleBlack;
-//    
-//    //设置导航栏内容
-//    [navitem setLeftBarButtonItem:leftbutton];
-//    //标题
-//    _titleLabel = [[UILabel alloc]init];
-//    _titleLabel.frame = CGRectMake(0, 0, 35, 35);
-//    _titleLabel.textColor = [UIColor blackColor];
-//    _titleLabel.font=[UIFont fontWithName:@"GurmukhiMN-Bold" size:22];
-//    _titleLabel.textAlignment =  YES;
-//    _titleLabel.text = @"套餐选择";
-//    navitem.titleView = _titleLabel;
-//    
-//    [self.view addSubview:navbar];
+
 
     self.nBarView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,50)];
     [self.nBarView setBackgroundColor:[UIColor blackColor]];
@@ -269,6 +237,11 @@
 
   //  [self loadAvatarInKeyWindow];
     // Do any additional setup after loading the view from its nib.
+    
+    //双击返回
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
+    tap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:tap];
 }
 
 #pragma mark - setter and getter
@@ -971,8 +944,8 @@
         //     [self dismissViewControllerAnimated:YES completion:nil];
         
         //More todo here.
-        ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
-        [self.navigationController popToViewController:firstVC animated:YES];
+        ViewController *firstVC = [[ViewController alloc]initViewController];
+        [self.navigationController pushViewController:firstVC animated:YES];
         
         [self removeAllFromView];
         [self removeAllFromKeyWindow];
@@ -1022,6 +995,15 @@
 
 //--------------------------按钮
 
+-(void)dealTap:(UITapGestureRecognizer *)tap
+{
+    
+    
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
+    
+    
+}
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"111");

@@ -81,9 +81,25 @@
 
     //按钮
     [self loadAvatarInKeyWindow];
+//    
+//    //双击返回
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
+//    tap.numberOfTapsRequired = 2;
+//    [self.view addGestureRecognizer:tap];
     
     
 }
+
+//-(void)dealTap:(UITapGestureRecognizer *)tap
+//{
+//    
+//    
+//    ViewController * webVC = [[ViewController alloc] initViewController];
+//    [self.navigationController pushViewController:webVC animated:YES];
+//    
+//    
+//}
+
 
 
 -(void)didApper{
@@ -228,15 +244,8 @@
     [self.navigationController pushViewController:ivc animated:YES];
     
 
-    ////
-    ////    [self flipToViewController:ivc fromView:imageTap withCompletion:NULL];
-    
-    
-    //
-    //    [self presentViewController:ivc animated:YES completion:nil];
-    //
-    //    [self removeAllFromKeyWindow];
-    //    [self removeAllFromView];
+        [self removeAllFromKeyWindow];
+        [self removeAllFromView];
     
     
     

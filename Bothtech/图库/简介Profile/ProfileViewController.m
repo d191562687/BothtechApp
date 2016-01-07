@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "ViewController.h"
+#import "BrandViewController.h"
 
 @interface ProfileViewController ()
 
@@ -38,20 +39,20 @@
     return self;
 }
 
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
+#pragma 页面布局
+- (void)pageLayout
+{
     //布局设置
-    UIButton * logoButton = [[UIButton alloc]initWithFrame:CGRectMake(600, 70, 402, 270)];
-    UIImage * logoImage = [UIImage imageNamed:@"组-1@2x.png"];
-    [logoButton setBackgroundImage:logoImage forState:UIControlStateNormal];
+
+    UIImageView *logoImage = [[UIImageView alloc]initWithFrame:CGRectMake(600, 70, 402, 270)];
+    [logoImage setImage:[UIImage imageNamed:@"组-1@2x.png"]];
+    [self.view addSubview:logoImage];
+
+    UIImageView * companyImage = [[UIImageView alloc]initWithFrame:CGRectMake(30, 390, 540, 349)];
+    [companyImage setImage:[UIImage imageNamed:@"公司图片@2x.png"]];
+    [self.view addSubview:companyImage];
     
-    UIButton * companyButton = [[UIButton alloc]initWithFrame:CGRectMake(30, 390, 540 , 349)];
-    UIImage * companyImage = [UIImage imageNamed:@"公司图片@2x.png"];
-    [companyButton setBackgroundImage:companyImage forState:UIControlStateNormal];
+
     
     UILabel * topLable = [[UILabel alloc]initWithFrame:CGRectMake(70, 70, 300, 30)];
     topLable.text = @"公司简介";
@@ -81,19 +82,19 @@
     UILabel *yewuEmaiLabel = [[UILabel alloc]initWithFrame:CGRectMake(620, 440, 280, 30)];
     yewuEmaiLabel.text = @"Email：chenwei@bothtimes.com";
     [self.view addSubview:yewuEmaiLabel];
-
+    
     //’官网‘label
     UILabel *guanwangLabel = [[UILabel alloc]initWithFrame:CGRectMake(620, 460, 255, 30)];
     guanwangLabel.text = @"官网：www.bothtimes.com";
     guanwangLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
     [self.view addSubview:guanwangLabel];
-
+    
     
     UILabel *dizhiLabel = [[UILabel alloc]initWithFrame:CGRectMake(620, 480, 400, 30)];
     dizhiLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
     dizhiLabel.text = @"北京市朝阳区小关北里甲2号渔阳置业大厦A座704";
     [self.view addSubview:dizhiLabel];
-       //’微信服务号‘label
+    //’微信服务号‘label
     UILabel *fuwuLabel = [[UILabel alloc]initWithFrame:CGRectMake(620, 500, 255, 30)];
     fuwuLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0];
     fuwuLabel.text = @"微信服务号：BothTech2014";
@@ -114,7 +115,7 @@
     //公司介绍
     NSString *path = [[NSBundle mainBundle] pathForResource:@"lorem_ipsum1.txt" ofType:nil];
     NSString *text = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-
+    
     UILabel * lable = [[UILabel alloc]initWithFrame:CGRectMake(40, 90, 500, 300)];
     lable.text = text;
     lable.lineBreakMode = UILineBreakModeWordWrap;
@@ -124,14 +125,40 @@
     [self.view addSubview:lable];
     
     
-  //  [self.view addSubview:textView];
-    [self.view addSubview:companyButton];
-    [self.view addSubview:logoButton];
+    //  [self.view addSubview:textView];
+    
+    //双击返回
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
+    tap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:tap];
+   
+    
+    
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    [self pageLayout];
+   
     
     
     //按钮
-    [self loadAvatarInKeyWindow];
+   // [self loadAvatarInKeyWindow];
 }
+
+-(void)dealTap:(UITapGestureRecognizer *)tap
+{
+    
+    
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
+    
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -154,11 +181,21 @@
     [avatar setTapBlock:^(RCDraggableButton *avatar) {
         NSLog(@"\n\tAvatar in keyWindow ===  111Tap!!! ===");
         //More todo here.
-        //     [self dismissViewControllerAnimated:YES completion:nil];
+//     [self dismissViewControllerAnimated:YES completion:nil];
         
         //More todo here.
-        ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
-        [self.navigationController popToViewController:firstVC animated:YES];
+        ViewController *firstVC = [[ViewController alloc]initViewController];
+        [self.navigationController pushViewController:firstVC animated:YES];
+
+//        
+//        ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
+//        [self.navigationController popToViewController:firstVC animated:YES];
+  
+        
+
+
+
+        
         
         [self removeAllFromView];
         [self removeAllFromKeyWindow];

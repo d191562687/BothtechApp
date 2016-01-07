@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface H5ThirthViewController : ViewController
+@interface H5ThirthViewController : UIViewController
 
 @property (nonatomic,retain) NSMutableArray *imageArray;
 

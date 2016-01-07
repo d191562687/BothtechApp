@@ -152,7 +152,9 @@
         UIPinchGestureRecognizer *pinch=[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(dealPinch:)];
         [imgView addGestureRecognizer:pinch];
         
+        //双击返回
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
+        tap.numberOfTapsRequired = 2;
         [imgView addGestureRecognizer:tap];
         
 
@@ -279,12 +281,12 @@
 
 -(void)dealTap:(UITapGestureRecognizer *)tap
 {
-//    NSLog(@"pop");
-//    [self dismissViewControllerAnimated:YES completion:nil];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     WebViewController * webVC = [[WebViewController alloc] initViewController];
     [self.navigationController pushViewController:webVC animated:YES];
-
+    
 
 }
 

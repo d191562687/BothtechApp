@@ -273,6 +273,9 @@
 		29BBA3F31C2D18A700517FFC /* 金龙腾0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D81C2D18A700517FFC /* 金龙腾0.png */; };
 		29BBA3F41C2D18A700517FFC /* 银鹭0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3D91C2D18A700517FFC /* 银鹭0.png */; };
 		29BBA3F61C2D216900517FFC /* 加0.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BBA3F51C2D216900517FFC /* 加0.png */; };
+		29C6B84A1C3B960A00BC5A83 /* cccViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6B8481C3B960A00BC5A83 /* cccViewController.m */; };
+		29C6B84B1C3B960A00BC5A83 /* cccViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C6B8491C3B960A00BC5A83 /* cccViewController.xib */; };
+		29C6B84D1C3B9E2900BC5A83 /* 背景111.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C6B84C1C3B9E2900BC5A83 /* 背景111.png */; };
 		29CAD66B1C0C42FE00C3F576 /* GlowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD6641C0C42FE00C3F576 /* GlowImageView.m */; };
 		29CAD66C1C0C42FE00C3F576 /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD6661C0C42FE00C3F576 /* MenuButton.m */; };
 		29CAD66D1C0C42FE00C3F576 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD6681C0C42FE00C3F576 /* MenuItem.m */; };
@@ -714,6 +717,10 @@
 		29BBA3D81C2D18A700517FFC /* 金龙腾0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "金龙腾0.png"; sourceTree = "<group>"; };
 		29BBA3D91C2D18A700517FFC /* 银鹭0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "银鹭0.png"; sourceTree = "<group>"; };
 		29BBA3F51C2D216900517FFC /* 加0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加0.png"; sourceTree = "<group>"; };
+		29C6B8471C3B960A00BC5A83 /* cccViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cccViewController.h; sourceTree = "<group>"; };
+		29C6B8481C3B960A00BC5A83 /* cccViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cccViewController.m; sourceTree = "<group>"; };
+		29C6B8491C3B960A00BC5A83 /* cccViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cccViewController.xib; sourceTree = "<group>"; };
+		29C6B84C1C3B9E2900BC5A83 /* 背景111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景111.png"; sourceTree = "<group>"; };
 		29CAD6631C0C42FE00C3F576 /* GlowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowImageView.h; sourceTree = "<group>"; };
 		29CAD6641C0C42FE00C3F576 /* GlowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlowImageView.m; sourceTree = "<group>"; };
 		29CAD6651C0C42FE00C3F576 /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButton.h; sourceTree = "<group>"; };
@@ -1507,6 +1514,9 @@
 				29BBA3B81C2D137900517FFC /* BrandViewController.xib */,
 				29BBA3BB1C2D13AB00517FFC /* Reads.h */,
 				29BBA3BC1C2D13AB00517FFC /* Reads.m */,
+				29C6B8471C3B960A00BC5A83 /* cccViewController.h */,
+				29C6B8481C3B960A00BC5A83 /* cccViewController.m */,
+				29C6B8491C3B960A00BC5A83 /* cccViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1905,6 +1915,7 @@
 		3CCCEAEC17B4E0F800750A12 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				29C6B84C1C3B9E2900BC5A83 /* 背景111.png */,
 				2920EDE31C22C02000A9938D /* QQ.png */,
 				2906E49B1C1E68A600A0E489 /* avatar@2x.png */,
 				295C81CB1C16CF5C00D71CC4 /* guzhang.gif */,
@@ -2022,6 +2033,9 @@
 		3CF16BAA17930123006E912F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					5,
+				);
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Andrés Brun";
 				TargetAttributes = {
@@ -2090,6 +2104,7 @@
 				291D5C481C34CFBE0052E841 /* cart.png in Resources */,
 				29E25AD41C31331C003603F8 /* 01-5@2x.png in Resources */,
 				29E25AEB1C31331C003603F8 /* 03-3m.png in Resources */,
+				29C6B84B1C3B960A00BC5A83 /* cccViewController.xib in Resources */,
 				29BBA3DA1C2D18A700517FFC /* luosimao服务平台logo0.png in Resources */,
 				292E83CF1C1971B40063F964 /* 回龙观社区网6.png in Resources */,
 				29E25AF81C31331C003603F8 /* H5016.png in Resources */,
@@ -2410,6 +2425,7 @@
 				29E25AEC1C31331C003603F8 /* 03-4.png in Resources */,
 				29E25B061C31331C003603F8 /* H5042.png in Resources */,
 				29E25B201C31331C003603F8 /* H5075.png in Resources */,
+				29C6B84D1C3B9E2900BC5A83 /* 背景111.png in Resources */,
 				292E839A1C1971B40063F964 /* 中兴天安网站0.png in Resources */,
 				292E84001C1971B40063F964 /* 格瑞德曼11.png in Resources */,
 				29BBA3BA1C2D137900517FFC /* BrandViewController.xib in Resources */,
@@ -2480,6 +2496,7 @@
 				29CAD66B1C0C42FE00C3F576 /* GlowImageView.m in Sources */,
 				290A14AF1C0D6CE100C68EB9 /* MMGridView.m in Sources */,
 				3CCCEAE217B4E0A800750A12 /* UIImageView+ABExtras.m in Sources */,
+				29C6B84A1C3B960A00BC5A83 /* cccViewController.m in Sources */,
 				299C46901C2D2C4F00F9871E /* ProfileViewController.m in Sources */,
 				296CDE561C0EF56400D8F81A /* Read.m in Sources */,
 				29CAD66D1C0C42FE00C3F576 /* MenuItem.m in Sources */,

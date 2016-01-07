@@ -68,11 +68,13 @@
     //按钮
     [self loadAvatarInKeyWindow];
     
-//    [self loadAvatarInCustomView];
-    
-  //  [self addControlButton];
 
+    
+    
+    
 }
+
+
 
 
 
@@ -95,8 +97,8 @@
    //     [self dismissViewControllerAnimated:YES completion:nil];
         
         //More todo here.
-        ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
-        [self.navigationController popToViewController:firstVC animated:YES];
+        ViewController *firstVC = [[ViewController alloc]initViewController];
+        [self.navigationController pushViewController:firstVC animated:YES];
 
   
         
@@ -292,7 +294,52 @@
     
     [self removeAllFromKeyWindow];
     [self removeAllFromView];
+//
+//    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
+//    
+//    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
+//    
+//    [gridView addGestureRecognizer:singleTapGestureRecognizer];
+//    
+//    
+//    
+//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
+//    
+//    [doubleTapGestureRecognizer setNumberOfTapsRequired:2];
+//    
+//    [gridView addGestureRecognizer:doubleTapGestureRecognizer];
+//    
+//    
+//    
+//    //这行很关键，意思是只有当没有检测到doubleTapGestureRecognizer 或者 检测doubleTapGestureRecognizer失败，singleTapGestureRecognizer才有效
+//    
+//    [singleTapGestureRecognizer requireGestureRecognizerToFail:doubleTapGestureRecognizer];
 }
+//
+//- (void)singleTap:(UIGestureRecognizer*)gestureRecognizer
+//
+//{
+//    
+//        ThirthViewController *thirthVC = [[ThirthViewController alloc] initViewController];
+//        [self.navigationController pushViewController:thirthVC animated:YES];
+//    
+//        [self removeAllFromKeyWindow];
+//        [self removeAllFromView];
+//    
+//}
+//
+//
+//- (void)doubleTap:(UIGestureRecognizer*)gestureRecognizer
+//
+//{
+//    
+//        ViewController *thirthVC = [[ViewController alloc] initViewController];
+//        [self.navigationController pushViewController:thirthVC animated:YES];
+//    
+//        [self removeAllFromKeyWindow];
+//        [self removeAllFromView];
+//    
+//}
 
 
 - (void)gridView:(MMGridView *)gridView didDoubleTapCell:(MMGridViewCell *)cell atIndex:(NSUInteger)index

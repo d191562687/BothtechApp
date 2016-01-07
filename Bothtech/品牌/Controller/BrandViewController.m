@@ -15,6 +15,8 @@
 #import "Reads.h"
 #import "ViewController.h"
 
+
+
 @interface BrandViewController ()
 {
     
@@ -84,8 +86,28 @@
     
     
     //按钮
-    [self loadAvatarInKeyWindow];
-    // Do any additional setup after loading the view from its nib.
+ //   [self loadAvatarInKeyWindow];
+    // Do any additional setup after loading the view from its
+    
+    
+    //双击返回
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
+    tap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:tap];
+    
+    
+    
+}
+
+
+-(void)dealTap:(UITapGestureRecognizer *)tap
+{
+    
+    
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,6 +125,8 @@
     _myScrollView.showsHorizontalScrollIndicator = NO;
     NSLog(@"两个要不一样啊  %f",SIZE.width);
     [self Hengping];
+    
+    [self.view addSubview:_myScrollView];
     
 }
 
@@ -310,8 +334,10 @@
         //     [self dismissViewControllerAnimated:YES completion:nil];
         
         //More todo here.
-        ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
-        [self.navigationController popToViewController:firstVC animated:YES];
+        ViewController *firstVC = [[ViewController alloc]initViewController];
+        [self.navigationController pushViewController:firstVC animated:YES];
+        
+        
         
         [self removeAllFromView];
         [self removeAllFromKeyWindow];
@@ -368,13 +394,6 @@
 
 #pragma mark - SLCoverFlowViewDataSource
 
-
-
-- (IBAction)back:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-    
-    
-}
 
 
 

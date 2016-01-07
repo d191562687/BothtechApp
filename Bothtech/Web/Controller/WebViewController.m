@@ -90,6 +90,11 @@
    
     //按钮
     [self loadAvatarInKeyWindow];
+    
+//    //双击返回
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
+//    tap.numberOfTapsRequired = 2;
+//    [self.view addGestureRecognizer:tap];
 
     
 }
@@ -235,15 +240,9 @@
     ivc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     NSLog(@"%d",_photos.count);
     [self.navigationController pushViewController:ivc animated:YES];
-    ////
-    ////    [self flipToViewController:ivc fromView:imageTap withCompletion:NULL];
-    
-    
-//    
-//    [self presentViewController:ivc animated:YES completion:nil];
-//    
-//    [self removeAllFromKeyWindow];
-//    [self removeAllFromView];
+
+    [self removeAllFromKeyWindow];
+    [self removeAllFromView];
     
     
     
@@ -312,8 +311,8 @@
         //     [self dismissViewControllerAnimated:YES completion:nil];
         
         //More todo here.
-        ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
-        [self.navigationController popToViewController:firstVC animated:YES];
+        ViewController *firstVC = [[ViewController alloc]initViewController];
+        [self.navigationController pushViewController:firstVC animated:YES];
         
         [self removeAllFromView];
         [self removeAllFromKeyWindow];
@@ -375,8 +374,12 @@
 
 
 
-- (IBAction)back:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+-(void)dealTap:(UITapGestureRecognizer *)tap
+{
+    
+    
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
     
     
 }

@@ -51,9 +51,28 @@
     
     //按钮
     
-    [self loadAvatarInKeyWindow];
+//    [self loadAvatarInKeyWindow];
+    
+    //双击返回
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
+    tap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:tap];
+    
+    
     
 }
+
+
+-(void)dealTap:(UITapGestureRecognizer *)tap
+{
+    
+    
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
+    
+    
+}
+
 //实现相关delegate 处理位置信息更新
 
 
@@ -88,8 +107,8 @@
         //     [self dismissViewControllerAnimated:YES completion:nil];
         
         //More todo here.
-        ViewController *firstVC = [self.navigationController.viewControllers objectAtIndex:0];
-        [self.navigationController popToViewController:firstVC animated:YES];
+    ViewController *firstVC = [[ViewController alloc]initViewController];
+    [self.navigationController pushViewController:firstVC animated:YES];
         
         [self removeAllFromView];
         [self removeAllFromKeyWindow];

@@ -279,8 +279,7 @@
 
 -(void)dealTap:(UITapGestureRecognizer *)tap
 {
-    //    NSLog(@"pop");
-    //    [self dismissViewControllerAnimated:YES completion:nil];
+    
     
     H5SecondViewController * webVC = [[H5SecondViewController alloc] initViewController];
     [self.navigationController pushViewController:webVC animated:YES];

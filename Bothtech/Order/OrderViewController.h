@@ -9,9 +9,10 @@
 #import "ViewController.h"
 #import "RCDraggableButton.h"
 
-@interface OrderViewController : ViewController
+@interface OrderViewController : UIViewController
 
 @property (nonatomic,strong) UIView *nBarView;
 
+- (id)initViewController;
 
 @end

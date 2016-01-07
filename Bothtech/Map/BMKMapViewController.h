@@ -12,7 +12,7 @@
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
 #import "RCDraggableButton.h"
 
-@interface BMKMapViewController : ViewController <BMKMapViewDelegate,BMKLocationServiceDelegate>{
+@interface BMKMapViewController : UIViewController <BMKMapViewDelegate,BMKLocationServiceDelegate>{
     IBOutlet BMKMapView* _mapView;
     IBOutlet UIButton* startBtn;
     IBOutlet UIButton* stopBtn;
@@ -20,6 +20,8 @@
     IBOutlet UIButton* followHeadBtn;
     BMKLocationService* _locService;
 }
+
+- (id)initViewController;
 
 
 @end

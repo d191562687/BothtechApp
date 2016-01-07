@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="562" height="583"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Appgai.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="edj-Af-aBB">
+                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Appgai.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="edj-Af-aBB">
                     <rect key="frame" x="0.0" y="0.0" width="562" height="583"/>
                 </imageView>
             </subviews>

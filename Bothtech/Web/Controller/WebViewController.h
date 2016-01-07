@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "RCDraggableButton.h"
 
-@interface WebViewController : ViewController<UIWebViewDelegate>
+@interface WebViewController : UIViewController<UIWebViewDelegate>
 {
 
     IBOutlet UIView * _webView;
