@@ -111,6 +111,8 @@
         return;
     }
     [self.realTimeBlur disMiss];
+    
+    
 }
 
 #pragma mark - 私有方法
@@ -118,7 +120,11 @@
  *  添加菜单按钮
  */
 - (void)showButtons {
+
+    
     NSArray *items = [self menuItems];
+    
+
     
     NSInteger perRowItemCount = self.perRowItemCount;
     
@@ -162,23 +168,51 @@
             menuButton.tag = kMenuButtonBaseTag + index;
             menuButton.didSelctedItemCompleted = ^(MenuItem *menuItem) {
                 weakSelf.selectedItem = menuItem;
+                
                 [weakSelf dismissMenu];
             };
+
             [self addSubview:menuButton];
         } else {
             menuButton.frame = fromRect;
+            
+            
         }
         
         double delayInSeconds = index * MenuButtonAnimationInterval;
         
         [self initailzerAnimationWithToPostion:toRect formPostion:fromRect atView:menuButton beginTime:delayInSeconds];
     }
+    
+
+        //渐变
+        self.alpha = 0;
+        [UIView beginAnimations:@"" context:nil];
+        [UIView setAnimationDuration:0.8];
+        self.alpha = 1;
+        [UIView commitAnimations];
+        
+        [self setBackgroundColor:[UIColor colorWithPatternImage: [UIImage imageNamed:@"home02.jpg"]]];
+    
 }
+
+
 /**
  *  隐藏按钮
  */
 - (void)hidenButtons {
+    
     NSArray *items = [self menuItems];
+    
+    
+    //渐变
+    self.alpha = 1;
+    [UIView beginAnimations:@"" context:nil];
+    [UIView setAnimationDuration:0.6];
+    self.alpha = 0;
+    [UIView commitAnimations];
+    
+    
     
     for (int index = 0; index < items.count; index ++) {
         MenuButton *menuButton = (MenuButton *)[self viewWithTag:kMenuButtonBaseTag + index];
@@ -200,12 +234,18 @@
         }
         double delayInSeconds = (items.count - index) * MenuButtonAnimationInterval;
         
+    
+        
         [self initailzerAnimationWithToPostion:toRect formPostion:fromRect atView:menuButton beginTime:delayInSeconds];
     }
 }
 
+
+
 - (NSArray *)menuItems {
     return self.items;
+    
+
 }
 
 /**
@@ -256,6 +296,7 @@
     springAnimation.springSpeed = springSpeed;     // value between 0-20
     springAnimation.toValue = [NSValue valueWithCGRect:toRect];
     springAnimation.fromValue = [NSValue valueWithCGRect:fromRect];
+    
     
     [view pop_addAnimation:springAnimation forKey:@"POPSpringAnimationKey"];
 }

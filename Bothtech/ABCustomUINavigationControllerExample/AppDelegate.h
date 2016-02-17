@@ -13,6 +13,8 @@
 
 #import "ViewController.h"
 
+#import "ZWIntroductionViewController.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate,BMKGeneralDelegate>
 {
     UINavigationController *navigationController;
@@ -22,5 +24,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) ViewController *viewController;
+
+@property (nonatomic, strong) ZWIntroductionViewController *introductionView;
 
 @end

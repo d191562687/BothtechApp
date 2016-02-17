@@ -58,23 +58,17 @@
     tap.numberOfTapsRequired = 2;
     [self.view addGestureRecognizer:tap];
     
-    
-    
 }
-
 
 -(void)dealTap:(UITapGestureRecognizer *)tap
 {
     
-    
     ViewController * webVC = [[ViewController alloc] initViewController];
     [self.navigationController pushViewController:webVC animated:YES];
-    
     
 }
 
 //实现相关delegate 处理位置信息更新
-
 
 -(void)viewWillAppear:(BOOL)animated {
     [_mapView viewWillAppear];

@@ -75,10 +75,9 @@
 -(NSMutableArray*)ImageArray
 {
     
-    NSMutableArray *imageArray = [[NSMutableArray alloc]initWithObjects:@"北京工业大学",@"彼岸春风网站",@"从头开始网站",@"电力工业网",@"格瑞德曼",@"供暖信息报网站",@"浩德仪器网",@"回龙观社区网",@"佳饰光网站",@"教育网站",@"酒窖网站",@"李纯博个人网站",@"企业网站模板",@"世纪鼎城",@"天路公考网",@"易巢网站",@"萤火虫网站",@"中诚通达汽车商城",@"中兴天安网站",@"LULU花店商城", nil];
+    NSMutableArray *imageArray = [[NSMutableArray alloc]initWithObjects:@"世纪鼎城",@"佳饰光照明设计",@"格瑞德曼",@"酒窖网站",@"隆基泰和",@"易巢网" , nil];
     return imageArray;
 }
-
 -(NSString*)ImageMethod:(int)Click
 {
     
@@ -87,15 +86,16 @@
 //每个分类的个数
 -(NSString*)Num:(int)i
 {
-    NSArray *NumArray = [[NSArray alloc]initWithObjects:@"3",@"3",@"6",@"4",@"12",@"9",@"5",@"9",@"9",@"8",@"6",@"6",@"7",@"6",@"19",@"7",@"7",@"8",@"5",@"8", nil];
+    NSArray *NumArray = [[NSArray alloc]initWithObjects:@"5",@"3",@"4",@"4",@"9", @"4",nil];
     return NumArray[i];
 }
 
 
+//设置分页第一显示照片
 -(NSMutableArray*)Zilei:(int)dianji
 {
     NSMutableArray *array = [[NSMutableArray alloc]init];
-    for (int a = 0; a<[[self Num:dianji]integerValue]; a++) {
+    for (int a = 1; a<[[self Num:dianji]integerValue]; a++) {
         
         [array addObject:[NSString stringWithFormat:@"%@%d",[self ImageMethod:dianji],a]];
     }

@@ -15,13 +15,7 @@
 
 @implementation PlayNDropViewController
 
-//- (id)initViewController
-//{
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        self = [[PlayNDropViewController alloc] initWithNibName:@"PlayNDropViewController" bundle:nil];
-//    }
-//    return self;
-//}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

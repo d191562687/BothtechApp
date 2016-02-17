@@ -77,7 +77,7 @@
     // Do any additional setup after loading the view.
     [self createToolbar];
     
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"home02.jpg"]];
     
 }
 
@@ -132,25 +132,26 @@
         //
         
         float w = SIZE.width;
-        float h = SIZE.height - 50;
+        float h = SIZE.height ;
         float x = i*w;
-        float y = 0;
+        float y = -20;
         
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, y, w, h)];
         
+        view.backgroundColor = [UIColor clearColor];
         
         imgView = [[UIImageView alloc] init];
         imgView.userInteractionEnabled = YES;
-        imgView.backgroundColor = [UIColor blackColor];
+//        imgView.backgroundColor = [UIColor blackColor];
         imgView.image = [UIImage imageNamed:_imageArray[i]];
         imgView.contentMode = UIViewContentModeScaleAspectFit;
         [view addSubview:imgView];
         
         
         
-        //手势
-        UIPinchGestureRecognizer *pinch=[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(dealPinch:)];
-        [imgView addGestureRecognizer:pinch];
+//        //手势
+//        UIPinchGestureRecognizer *pinch=[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)];
+//        [imgView addGestureRecognizer:pinch];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
         [imgView addGestureRecognizer:tap];
@@ -260,7 +261,6 @@
         
         
     }
-    
 }
 
 -(void)dealPinch:(UIPinchGestureRecognizer *)paramSender
@@ -277,6 +277,7 @@
     
 }
 
+
 -(void)dealTap:(UITapGestureRecognizer *)tap
 {
     
@@ -287,19 +288,19 @@
     
 }
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollViewSS {
     NSLog(@"=====");
     
     if (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight || self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
         //横屏
         //        NSLog(@"横屏第%.0f页",scrollView.contentOffset.x/1024+1);
-        _page = scrollView.contentOffset.x/SIZE.width+1;
+        _page = scrollViewSS.contentOffset.x/SIZE.width+1;
         NSLog(@"横屏%d",_page);
         
     }else{
         //        _page = _page;
         //        NSLog(@"竖屏第%.0f页",scrollView.contentOffset.x/1024+1);
-        _page = scrollView.contentOffset.x/SIZE.width+1;
+        _page = scrollViewSS.contentOffset.x/SIZE.width+1;
         NSLog(@"竖屏%d",_page);
     }
     
@@ -362,14 +363,7 @@
     //
     //heng向执行
     if (self.interfaceOrientation == UIInterfaceOrientationLandscapeRight || self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
-        //heng向执行
-#warning 竖屏变横屏的时候
-        //        [UIView animateWithDuration:1 animations:^{
-        //            imgView.alpha = 0;
-        //            imgView = nil;
-        //
-        //            NSLog(@"动画执行完毕");
-        //        }];
+
         scrollView.frame = CGRectMake(0, 0, 1024, 768);
         
         //        imgView.frame = CGRectMake(0, 0, _imgW*0.75, _imgH);
@@ -406,7 +400,7 @@
     
     
     
-    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * _imageArray.count+20, 200);
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * _imageArray.count, 200);
     scrollView.frame = CGRectMake(0, 0, SIZE.width, SIZE.height);
     [self addImageView];
     
@@ -462,12 +456,6 @@
     }
     
 }
-
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning

@@ -14,6 +14,7 @@
 #import "UIImage+UIImageExtras.h"
 #import "Reads.h"
 #import "ViewController.h"
+#import "ProfileViewController.h"
 
 
 
@@ -85,10 +86,6 @@
     [self didApper];
     
     
-    //按钮
- //   [self loadAvatarInKeyWindow];
-    // Do any additional setup after loading the view from its
-    
     
     //双击返回
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
@@ -104,7 +101,7 @@
 {
     
     
-    ViewController * webVC = [[ViewController alloc] initViewController];
+    ProfileViewController * webVC = [[ProfileViewController alloc] initViewController];
     [self.navigationController pushViewController:webVC animated:YES];
     
     
@@ -196,7 +193,7 @@
     _Titlelabel = [[UILabel alloc] init];
     _Titlelabel.frame = CGRectMake(x, y+_imageButton.frame.size.height + 3 , 270, 30);
     _Titlelabel.text = [read ImageArray][number];
-    _Titlelabel.textColor = [UIColor blackColor];
+    _Titlelabel.textColor = [UIColor clearColor];
     _Titlelabel.textAlignment = NSTextAlignmentCenter;
     _Titlelabel.font = [UIFont fontWithName:@"Helvetica" size:24];
     
@@ -232,14 +229,14 @@
     // 1.封装图片数据
     
     Reads *read = [[Reads alloc]init];
-    NSUInteger count = [[read Zilei:(imageTap.tag - 10000)] count];
+    NSUInteger count = [[read Zilei:(imageTap.tag - 10000.0)] count];
     
     NSMutableArray *img = [[NSMutableArray alloc] init];
     _photos = [NSMutableArray arrayWithCapacity:count];
     
     for (int i = 0; i<count; i++) {
         // 替换为中等尺寸图片
-        NSString *path = [read Zilei:(imageTap.tag - 10000)][i];
+        NSString *path = [read Zilei:(imageTap.tag - 10000.0)][i];
         
         [img addObject:path];
     }
@@ -315,77 +312,6 @@
     
 }
 
-#pragma 悬浮按钮
-
-- (void)loadAvatarInKeyWindow {
-    
-    RCDraggableButton * avatar = [[RCDraggableButton alloc] initInKeyWindowWithFrame:CGRectMake(900, 630, 90, 90)];
-    [avatar setBackgroundImage:[UIImage imageNamed:@"avatar"] forState:UIControlStateNormal];
-    
-    [avatar setLongPressBlock:^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in keyWindow ===  LongPress!!! ===");
-        //More todo here.
-        
-    }];
-    
-    [avatar setTapBlock:^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in keyWindow ===  111Tap!!! ===");
-        //More todo here.
-        //     [self dismissViewControllerAnimated:YES completion:nil];
-        
-        //More todo here.
-        ViewController *firstVC = [[ViewController alloc]initViewController];
-        [self.navigationController pushViewController:firstVC animated:YES];
-        
-        
-        
-        [self removeAllFromView];
-        [self removeAllFromKeyWindow];
-        
-        
-    }];
-    
-    [avatar setDoubleTapBlock:^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in keyWindow ===  DoubleTap!!! ===");
-        //More todo here.
-        
-        
-    }];
-    
-    [avatar setDraggingBlock:^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in keyWindow === Dragging!!! ===");
-        //More todo here.
-        
-    }];
-    
-    [avatar setDragDoneBlock:^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in keyWindow === DragDone!!! ===");
-        //More todo here.
-        
-    }];
-    
-    [avatar setAutoDockingBlock:^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in keyWindow === AutoDocking!!! ===");
-        //More todo here.
-        
-    }];
-    
-    [avatar setAutoDockingDoneBlock:^(RCDraggableButton *avatar) {
-        NSLog(@"\n\tAvatar in keyWindow === AutoDockingDone!!! ===");
-        //More todo here.
-        
-    }];
-}
-
-- (void)removeAllFromKeyWindow {
-    [RCDraggableButton removeAllFromKeyWindow];
-}
-
-- (void)removeAllFromView {
-    [RCDraggableButton removeAllFromView:[self.view viewWithTag:89]];
-}
-
-//--------------------------按钮
 
 
 

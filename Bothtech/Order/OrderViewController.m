@@ -52,17 +52,11 @@
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self = [[OrderViewController alloc] initWithNibName:@"OrderViewController" bundle:nil];
-        
-        
-        
+     
     }
-    
-    
+
     return self;
 }
-
-
-
 
 
 - (void)viewDidLoad {
@@ -75,73 +69,68 @@
     
     NSDictionary *dic1 = @{@"id": @9323283,
                            @"name": @"品牌设计",
-                           @"min_price": @888.0,
-                           @"praise_num": @20,
+                           @"min_price": @1800.0,
+                           @"praise_num": @11,
                            @"picture":@"1.png",
-                           @"month_saled":@12};
+                           @"month_saled":@"A"};
     
     NSDictionary *dic2 = @{@"id": @9323284,
                            @"name": @"网站建设",
-                           @"min_price": @999.0,
+                           @"min_price": @5800.0,
                            @"praise_num": @6,
                            @"picture":@"2.png",
-                           @"month_saled":@34};
+                           @"month_saled":@"B"};
     
     NSDictionary *dic3 = @{@"id": @9323285,
                            @"name": @"移动应用",
-                           @"min_price": @2888.0,
+                           @"min_price": @58000.0,
                            @"praise_num": @8,
                            @"picture":@"3.png",
-                           @"month_saled":@16};
+                           @"month_saled":@"C"};
     
     NSDictionary *dic4 = @{@"id": @26844943,
                            @"name": @"互动营销",
-                           @"min_price": @3002.0,
+                           @"min_price": @4800.0,
                            @"praise_num": @1,
                            @"picture":@"4.png",
-                           @"month_saled":@56};
+                           @"month_saled":@"D"};
     
     NSDictionary *dic5 = @{@"id": @9323279,
                            @"name": @"软件开发",
-                           @"min_price": @2009.0,
+                           @"min_price": @58000.0,
                            @"praise_num": @11,
                            @"picture":@"5.png",
-                           @"month_saled":@11};
+                           @"month_saled":@"E"};
     
-    NSDictionary *dic6 = @{@"id": @9323289,
-                           @"name": @"功能模块",
-                           @"min_price": @22.0,
-                           @"praise_num": @2,
-                           @"picture":@"6.png",
-                           @"month_saled":@5};
-    
-    NSDictionary *dic7 = @{@"id": @9323243,
-                           @"name": @"功能模块",
-                           @"min_price": @72.0,
-                           @"praise_num": @0,
-                           @"picture":@"7.png",
-                           @"month_saled":@19};
-    
-    NSDictionary *dic8 = @{@"id": @9323220,
-                           @"name": @"功能模块",
-                           @"min_price": @64.0,
-                           @"praise_num": @28,
-                           @"picture":@"8.png",
-                           @"month_saled":@7};
-    
-    NSDictionary *dic9 = @{@"id": @9323280,
-                           @"name": @"功能模块",
-                           @"min_price": @30.0,
-                           @"praise_num": @48,
-                           @"picture":@"9.png",
-                           @"month_saled":@0};
-    
-    NSDictionary *dic10 = @{@"id": @9323267,
-                            @"name": @"功能模块",
-                            @"min_price": @16.0,
-                            @"praise_num": @9,
-                            @"picture":@"10.png",
-                            @"month_saled":@136};
+    NSDictionary *dic6 = @{};
+//
+//    NSDictionary *dic7 = @{@"id": @9323243,
+//                           @"name": @"功能模块",
+//                           @"min_price": @72.0,
+//                           @"praise_num": @0,
+//                           @"picture":@"7.png",
+//                           @"month_saled":@19};
+//    
+//    NSDictionary *dic8 = @{@"id": @9323220,
+//                           @"name": @"功能模块",
+//                           @"min_price": @64.0,
+//                           @"praise_num": @28,
+//                           @"picture":@"8.png",
+//                           @"month_saled":@7};
+//    
+//    NSDictionary *dic9 = @{@"id": @9323280,
+//                           @"name": @"功能模块",
+//                           @"min_price": @30.0,
+//                           @"praise_num": @48,
+//                           @"picture":@"9.png",
+//                           @"month_saled":@0};
+//    
+//    NSDictionary *dic10 = @{@"id": @9323267,
+//                            @"name": @"功能模块",
+//                            @"min_price": @16.0,
+//                            @"praise_num": @9,
+//                            @"picture":@"10.png",
+//                            @"month_saled":@136};
     
     self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 1024, 768)];
     self.view.backgroundColor = [UIColor blackColor];
@@ -158,7 +147,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setImage:LeftImage forState:UIControlStateNormal];
   
-    button.frame = CGRectMake(10, 15, 40, 40);
+    button.frame = CGRectMake(10, 15, 50, 50);
     [button addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
 
     //工具
@@ -167,7 +156,7 @@
     [buttonB setImage:RightImage forState:UIControlStateNormal];
     
     
-    buttonB.frame = CGRectMake(970, 17, 40, 40);
+    buttonB.frame = CGRectMake(970, 17, 50, 50);
     [buttonB addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
 
     
@@ -190,13 +179,13 @@
 
     
     //这样书写的定义数据，用于后面的动态添加订单个数的key：orderCount。 实际项目中没有这么复杂
-    _dataArray = [@[[dic1 mutableCopy],[dic2 mutableCopy],[dic3 mutableCopy],[dic4 mutableCopy],[dic5 mutableCopy],[dic6 mutableCopy],[dic7 mutableCopy],[dic8 mutableCopy],[dic9 mutableCopy],[dic10 mutableCopy]] mutableCopy];
+    _dataArray = [@[[dic1 mutableCopy],[dic2 mutableCopy],[dic3 mutableCopy],[dic4 mutableCopy],[dic5 mutableCopy],[dic6 mutableCopy]] mutableCopy];
     
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"图层-1@2x.png"]];
+//    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"图层-1@2x.png"]];
+        UIImageView  * backgroundView = [[UIImageView alloc]init];
+    backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"home02.jpg"]];
     
-    
-    
-    
+
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 65, self.view.bounds.size.width, self.view.bounds.size.height - 70)];
     //self.tableView.backgroundColor = [UIColor whiteColor];
@@ -213,6 +202,7 @@
     [self.view addSubview:self.tableView];
     
     
+    //购物条
     _ShopCartView = [[ShoppingCartView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 70, CGRectGetWidth(self.view.bounds), 70) inView:self.view withObjects:nil];
     _ShopCartView.parentView = self.view;
     _ShopCartView.OrderList.delegate = self;
@@ -237,11 +227,7 @@
 
   //  [self loadAvatarInKeyWindow];
     // Do any additional setup after loading the view from its nib.
-    
-    //双击返回
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
-    tap.numberOfTapsRequired = 2;
-    [self.view addGestureRecognizer:tap];
+
 }
 
 #pragma mark - setter and getter
@@ -258,7 +244,9 @@
 #pragma mark -导航栏上的按钮方法
 -(void)backAction:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -307,13 +295,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
-//{
-//    if ([tableView isEqual:self.tableView]) {
-//        NSLog(@"选中FoodCell");
-//    }
-//}
-
 
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -324,20 +305,17 @@
         
         FoodCell * cell = (FoodCell *) [tableView dequeueReusableCellWithIdentifier:cellID];
         
-        
-   
-        
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:cellID owner:nil options:nil] lastObject];
             
             float price = [_dataArray[indexPath.row][@"min_price"] floatValue];
-            NSInteger nSaledNum = [_dataArray[indexPath.row][@"month_saled"]integerValue];
+//            NSInteger nSaledNum = [_dataArray[indexPath.row][@"month_saled"]integerValue];
             NSInteger nPraiseNum = [_dataArray[indexPath.row][@"praise_num"]integerValue];
             
             cell.name.text = _dataArray[indexPath.row][@"name"];
             cell.price.text = [NSString stringWithFormat:@"￥%.0f",price];
 //            cell.month_saled.text = [NSString stringWithFormat:@"已售%ld",(long)nSaledNum];
-            cell.month_saled.text = [NSString stringWithFormat:@"【 套餐一 】"];
+            cell.month_saled.text = [NSString stringWithFormat:@"【 套餐%@ 】",_dataArray[indexPath.row][@"month_saled"]];
 
             cell.praise_num.text = [NSString stringWithFormat:@"%ld",(long)nPraiseNum];
             cell.foodImageView.image = [UIImage imageNamed:_dataArray[indexPath.row][@"picture"]];
@@ -532,7 +510,7 @@
     return 120;
 }
 
-#define SECTION_HEIGHT 40.0
+#define SECTION_HEIGHT 30.0
 // 设置section的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
@@ -551,10 +529,6 @@
     UILabel *leftLine = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 3, SECTION_HEIGHT)];
     [view addSubview:leftLine];
     
-    UILabel *headerTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, SECTION_HEIGHT)];
-    headerTitle.text = [NSString stringWithFormat:@"%ld号口袋",section +1];
-    headerTitle.font = [UIFont systemFontOfSize:17];
-    [view addSubview:headerTitle];
     
     if (section == 0) {
         
@@ -564,7 +538,7 @@
         [clear setTitle:@"清空购物车" forState:UIControlStateNormal];
         [clear setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         clear.titleLabel.textAlignment = NSTextAlignmentCenter;
-        clear.titleLabel.font = [UIFont systemFontOfSize:17];
+        clear.titleLabel.font = [UIFont systemFontOfSize:18 ];
         [clear addTarget:self action:@selector(clearShoppingCart:) forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:clear];
     }
@@ -585,7 +559,7 @@
     }
     
     //    view.backgroundColor = kUIColorFromRGB(0x9BCB3D);
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     return view;
 }
 
@@ -998,10 +972,8 @@
 -(void)dealTap:(UITapGestureRecognizer *)tap
 {
     
-    
     ViewController * webVC = [[ViewController alloc] initViewController];
     [self.navigationController pushViewController:webVC animated:YES];
-    
     
 }
 

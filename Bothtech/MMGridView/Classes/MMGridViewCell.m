@@ -76,7 +76,7 @@
                 break;
                 
             case 2:
-                [gridView performSelector:doubleTapSelector withObject:self];
+                [gridView performSelector:doubleTapSelector withObject:self ];
                 break;
                               
             default:

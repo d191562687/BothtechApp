@@ -87,29 +87,65 @@
     
     [self didApper];
     
-   
+       self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"home02.jpg"]];
     //按钮
-    [self loadAvatarInKeyWindow];
+//    [self loadAvatarInKeyWindow];
+    
+//
+    //单机
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
+    
+    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
+    
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
     
 //    //双击返回
 //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dealTap:)];
 //    tap.numberOfTapsRequired = 2;
 //    [self.view addGestureRecognizer:tap];
+//    //这行很关键，意思是只有当没有检测到doubleTapGestureRecognizer 或者 检测doubleTapGestureRecognizer失败，singleTapGestureRecognizer才有效
+//    
+//    [singleTapGestureRecognizer requireGestureRecognizerToFail:tap];
+    
+    
+}
 
+- (void)singleTap:(UIGestureRecognizer*)gestureRecognizer
+
+{
+    NSLog(@"-----singleTap-----");
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
     
 }
 
 
--(void)didApper{
-    _myScrollView.frame = CGRectMake(0, 0, 1024, 768);
-    NSLog(@"w = %f h = %f",SIZE.width,SIZE.height);
+
+
+-(void)dealTap:(UITapGestureRecognizer *)tap
+{
     
-        _myScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 6 +30,self.view.frame.size.height);
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
+    
+}
+
+
+
+-(void)didApper{
+    
+        _myScrollView.frame = CGRectMake(0, 0, 1024, 768);
+        NSLog(@"w = %f h = %f",SIZE.width,SIZE.height);
+        
+        _myScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 1 +30,self.view.frame.size.height);
         _myScrollView.frame = CGRectMake(0, 0, 1024, 768);
         _myScrollView.pagingEnabled = YES;
         _myScrollView.showsHorizontalScrollIndicator = NO;
         NSLog(@"两个要不一样啊  %f",SIZE.width);
         [self Hengping];
+    
+    
+  
   
 }
 
@@ -135,8 +171,10 @@
     
     Read *read = [[Read alloc]init];
     
-    int BtnHS = 50;
-    int BtnY = 55;
+    int BtnHS = 40;
+    
+    //布局高度
+    int BtnY = 60;
     
     int i = 0;
     for (i = 0; i <[[read ImageArray] count]; i++ ){
@@ -149,24 +187,52 @@
         NSString *Pa = [NSString stringWithFormat:@"%@0",[read ImageMethod:i]];
         
         
-        [_imageview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(BtnClick:)]];
+
         
         _imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _imageButton.frame = CGRectMake( (_BtnW+_BtnWS) * (i%NUM) + _BtnX +5, (_BtnH+BtnHS) *(i/NUM) + BtnY, _BtnW, _BtnH );
-        [_imageButton addTarget:self action:@selector(BtnClick:) forControlEvents:UIControlEventTouchUpInside];
+
+        
+        [_imageButton addTarget:self action:@selector(tabButtonTapped:forEvent:) forControlEvents:UIControlEventTouchDown];
+        
+        [_imageButton addTarget:self action:@selector(repeatBtnTapped:forEvent:) forControlEvents:UIControlEventTouchDownRepeat];
+        
+//        [_imageButton addTarget:self action:@selector(BtnClick:) forControlEvents:UIControlEventTouchUpInside];
         _imageButton.tag = 10000+i;
         [_imageButton addSubview:_imageView];
-        [_imageButton setBackgroundColor:[UIColor redColor]];
+        [_imageButton setBackgroundColor:[UIColor clearColor]];
         [_imageButton setBackgroundImage:[UIImage imageNamed:Pa] forState:UIControlStateNormal];
         [_myScrollView addSubview:_imageButton];
-        
-        
+
         
         [self TitleLabel:i];
+        
+        
     }
     _getEndImageYH = (_BtnH+BtnHS) *(i/NUM) + BtnY ;
     
+    
+
+    
 }
+
+- (void)tabButtonTapped:(UIButton *)imageTap forEvent:(UIEvent *)event {
+    
+    [self performSelector:@selector(BtnClick:) withObject:imageTap afterDelay:0.5];
+    
+    
+}
+- (void)repeatBtnTapped:(UIButton *)imageTap forEvent:(UIEvent *)event {
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(BtnClick:) object:imageTap];
+    
+    NSLog(@"双击操作");
+    
+    ViewController * webVC = [[ViewController alloc] initViewController];
+    [self.navigationController pushViewController:webVC animated:YES];
+    
+}
+
 
 
 //TitleLabel
@@ -179,7 +245,7 @@
     _Titlelabel = [[UILabel alloc] init];
     _Titlelabel.frame = CGRectMake(x, y+_imageButton.frame.size.height+6 , 270, 30);
     _Titlelabel.text = [read ImageArray][number];
-    _Titlelabel.textColor = [UIColor blackColor];
+    _Titlelabel.textColor = [UIColor clearColor];
     _Titlelabel.textAlignment = NSTextAlignmentCenter;
     _Titlelabel.font = [UIFont fontWithName:@"Helvetica" size:24];
 
@@ -238,9 +304,11 @@
     
     ivc.imageArray = img ;
     ivc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    NSLog(@"%d",_photos.count);
+    NSLog(@"%lu",(unsigned long)_photos.count);
+    
     [self.navigationController pushViewController:ivc animated:YES];
-
+ 
+    
     [self removeAllFromKeyWindow];
     [self removeAllFromView];
     
@@ -272,12 +340,12 @@
 -(void)Hengping
 {
     
-    _BtnW = 280;//宽
+    _BtnW = 869;//宽
     _BtnWS = 60;//左右间距
-    _BtnX = 30;//x
-    _BtnH = 300;//高
+    _BtnX = 69;//x
+    _BtnH = 76;//高
     
-    [self LayoutImage1:10];
+    [self LayoutImage1:1];
 }
 
 -(void)Shuping
@@ -373,16 +441,6 @@
 #pragma mark - SLCoverFlowViewDataSource
 
 
-
--(void)dealTap:(UITapGestureRecognizer *)tap
-{
-    
-    
-    ViewController * webVC = [[ViewController alloc] initViewController];
-    [self.navigationController pushViewController:webVC animated:YES];
-    
-    
-}
 
 
 

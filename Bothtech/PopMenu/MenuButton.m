@@ -42,7 +42,7 @@
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.iconImageView.frame), CGRectGetWidth(self.bounds), 35)];
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.backgroundColor = [UIColor clearColor];
-        self.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:24];
+        self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-BoldItalic" size:24];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.text = menuItem.title;
         CGPoint center = self.titleLabel.center;
@@ -55,16 +55,23 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     // 播放缩放动画
+    
+    
     POPSpringAnimation *scaleAnimation = [POPSpringAnimation animation];
     scaleAnimation.springBounciness = 20;    // value between 0-20
     scaleAnimation.springSpeed = 20;     // value between 0-20
     scaleAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
     scaleAnimation.toValue = [NSValue valueWithCGSize:CGSizeMake(1.3, 1.3)];
     [self pop_addAnimation:scaleAnimation forKey:@"scaleAnimationKey"];
+    
+ 
+
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    
     [self disMissCompleted:NULL];
+    
 }
 
 - (void)disMissCompleted:(void(^)(BOOL finished))completed {
@@ -76,8 +83,14 @@
     scaleAnimation.completionBlock = ^(POPAnimation *anim, BOOL finished) {
         if (completed) {
             completed(finished);
+            
+            
         }
     };
+    
+  
+    
+    
     [self pop_addAnimation:scaleAnimation forKey:@"scaleAnimationKey"];
 }
 
@@ -86,8 +99,13 @@
     [self disMissCompleted:^(BOOL finished) {
         if (self.didSelctedItemCompleted) {
             self.didSelctedItemCompleted(self.menuItem);
+            
+            
+ 
         }
     }];
+    
+    
 }
 
 @end

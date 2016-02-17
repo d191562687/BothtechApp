@@ -17,11 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initViewController];
     self.window.rootViewController = [[FlipSquaresNavigationController alloc] initWithRootViewController:self.viewController];
+    
     //self.window.rootViewController = [[CubeNavigationController alloc] initWithRootViewController:self.viewController];
     
     _mapManager = [[BMKMapManager alloc]init];
@@ -31,12 +33,26 @@
         NSLog(@"manager start failed!");
     }
     // Add the navigation controller's view to the window and display.
+    
+//    [self.window addSubview:navigationController.view];
+    
+    
 
     
-    [self.window addSubview:navigationController.view];
-    
-    
     [self.window makeKeyAndVisible];
+    
+    //引导页
+    NSArray *coverImageNames = @[@"img_index_01txt", @"img_index_02txt", @"img_index_03txt"];
+    NSArray *backgroundImageNames = @[@"img_index_01bg", @"img_index_02bg", @"img_index_03bg"];
+    
+    self.introductionView = [[ZWIntroductionViewController alloc] initWithCoverImageNames:coverImageNames backgroundImageNames:backgroundImageNames];
+    
+    [self.window addSubview:self.introductionView.view];
+    
+    __weak AppDelegate *weakSelf = self;
+    self.introductionView.didSelectedEnter = ^() {
+        weakSelf.introductionView = nil;
+    };
     
 
     

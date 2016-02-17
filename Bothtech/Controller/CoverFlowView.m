@@ -119,7 +119,7 @@
             [removeLayer addAnimation:fadeOut forKey:@"fadeout"];
             [self performSelector:@selector(removeLayerFromSuper:) withObject:removeLayer afterDelay:0.5f];
         }
-        int num = self.images.count - self.sideVisibleImageCount - 1;
+        int num = self.images.count - self.sideVisibleImageCount - 1.0;
         if (self.currentRenderingImageIndex < num){
             UIImage *candidateImage = [self.images objectAtIndex:self.currentRenderingImageIndex  + self.sideVisibleImageCount + 1];
             CALayer *candidateLayer = [CALayer layer];
@@ -236,7 +236,7 @@
     if (self) {
         //set up perspective
         CATransform3D transformPerspective = CATransform3DIdentity;
-                        transformPerspective.m34 = -1.0 / 600.0;
+                        transformPerspective.m34 = -1.0 / 500.0;
                         self.layer.sublayerTransform = transformPerspective;
     }
 
@@ -285,7 +285,7 @@
 - (void)setupImages {
     // setup the visible area, and start index and end index
     int startingImageIndex = (self.currentRenderingImageIndex - self.sideVisibleImageCount <= 0) ? 0 : self.currentRenderingImageIndex - self.sideVisibleImageCount;
-    int endImageIndex = (self.currentRenderingImageIndex + self.sideVisibleImageCount < self.images.count )  ? (self.currentRenderingImageIndex + self.sideVisibleImageCount) : (self.images.count -1 );
+    int endImageIndex = (self.currentRenderingImageIndex + self.sideVisibleImageCount < self.images.count )  ? (self.currentRenderingImageIndex + self.sideVisibleImageCount) : (self.images.count -1.0 );
 
     //step2: set up images that ready for rendering
     for (int i = startingImageIndex; i <= endImageIndex; i++) {
@@ -293,7 +293,7 @@
        CALayer *imageLayer = [CALayer layer];
        imageLayer.contents = (__bridge id)image.CGImage;
        CGFloat scale = (i == self.currentRenderingImageIndex) ? self.middleImageScale : self.sideVisibleImageScale;
-       imageLayer.bounds = CGRectMake(0, 0, image.size.width * scale, image.size.height*scale);
+       imageLayer.bounds = CGRectMake(0, 0, image.size.width * scale , image.size.height*scale );
        [self.imageLayers addObject:imageLayer];
     }
 

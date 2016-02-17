@@ -75,7 +75,7 @@
 -(NSMutableArray*)ImageArray
 {
     
-    NSMutableArray *imageArray = [[NSMutableArray alloc]initWithObjects:@"H501",@"H502",@"H503",@"H504",@"H505",@"H506",@"H507",@"H508",@"H509", nil];
+    NSMutableArray *imageArray = [[NSMutableArray alloc]initWithObjects:@"H501",@"H506",@"H502",@"H503",@"H505",@"H504",@"H507",@"H508",@"H509",@"H5010", nil];
     return imageArray;
 }
 
@@ -87,7 +87,7 @@
 //每个分类的个数
 -(NSString*)Num:(int)i
 {
-    NSArray *NumArray = [[NSArray alloc]initWithObjects:@"7",@"4",@"7",@"8",@"8",@"7",@"7",@"9",@"9", nil];
+    NSArray *NumArray = [[NSArray alloc]initWithObjects:@"7",@"7",@"4",@"7",@"7",@"8",@"7",@"9",@"9",@"20", nil];
     return NumArray[i];
 }
 

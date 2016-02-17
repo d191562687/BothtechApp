@@ -193,6 +193,7 @@
     if (_isDragging && _dragDoneBlock) {
         _dragDoneBlock(self);
         _singleTapBeenCanceled = YES;
+
     }
     
     if (_isDragging && _autoDocking) {
@@ -205,6 +206,7 @@
                 self.center = CGPointMake(superviewFrame.size.width - frame.size.width / 2, self.center.y);
                 if (_autoDockingBlock) {
                     _autoDockingBlock(self);
+                    
                 }
             } completion:^(BOOL finished) {
                 if (_autoDockingDoneBlock) {
@@ -230,6 +232,7 @@
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     _isDragging = NO;
     [super touchesCancelled:touches withEvent:event];
 }
@@ -246,6 +249,7 @@
 #pragma mark - remove
 + (void)removeAllFromKeyWindow {
     for (id view in [[UIApplication sharedApplication].keyWindow subviews]) {
+  
         if ([view isKindOfClass:[RCDraggableButton class]]) {
             [view removeFromSuperview];
         }

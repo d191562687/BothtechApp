@@ -11,7 +11,7 @@
 #import "OverlayView.h"
 
 #define SECTION_HEIGHT 30.0
-#define ROW_HEIGHT 50.0
+#define ROW_HEIGHT 70.0
 
 @interface ShoppingCartView ()<ZFReOrderTableViewDelegate>
 
@@ -34,28 +34,7 @@
 
 @implementation ShoppingCartView
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        
-//        
-//        
-//    }
-//    
-//    return self;
-//    //To change the template use AppCode | Preferences | File Templates.
-//}
-//
-//- (id)initViewController
-//{
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        self = [[OrderViewController alloc] initWithNibName:@"OrderViewController" bundle:nil];
-//        
-//    }
-//    
-//    
-//    return self;
-//}
+
 
 
 -(instancetype) initWithFrame:(CGRect)frame inView:(UIView *)parentView withObjects:(NSMutableArray *)objects
@@ -153,8 +132,8 @@
         CGPoint point = _shoppingCartBtn.center;
         CGPoint labelPoint = _money.center;
       
-        point.y -= (_OrderList.frame.size.height + 50);
-        labelPoint.x -= 60;
+        point.y -= (_OrderList.frame.size.height + 90);
+        labelPoint.x -= 50;
         self.OverlayView.alpha = 1.0;
 
         [_shoppingCartBtn setCenter:point];
@@ -179,14 +158,16 @@
     }
     
     height = nRow * ROW_HEIGHT + nSection * SECTION_HEIGHT;
-    int maxHeight = self.parentView.frame.size.height - 250 - 30;
+    int maxHeight = self.parentView.frame.size.height - 120 - 30;
     if (height >= maxHeight) {
         height = maxHeight;
     }
     //初始Y
     float orignY = _OrderList.frame.origin.y;
     
-    _OrderList.frame = CGRectMake(_OrderList.frame.origin.x, self.parentView.bounds.size.height - height - 50, _OrderList.frame.size.width, height);
+    //设置购物分页
+    
+    _OrderList.frame = CGRectMake(_OrderList.frame.origin.x, self.parentView.bounds.size.height - height - 120, _OrderList.frame.size.width, height);
     //排序后Y
     float currentY = _OrderList.frame.origin.y;
     
@@ -216,8 +197,8 @@
         CGPoint point = _shoppingCartBtn.center;
         CGPoint labelPoint = _money.center;
             
-        point.y += (_OrderList.frame.size.height + 50);
-        labelPoint.x += 60;
+        point.y += (_OrderList.frame.size.height + 90);
+        labelPoint.x += 50;
         _OverlayView.alpha = 0.0;
 
         [_shoppingCartBtn setCenter:point];

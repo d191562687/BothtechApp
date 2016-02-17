@@ -86,7 +86,7 @@
             
             UIImageView *fromImageView = [currentVC.view imageInNavController:self];
             
-            int index = [self.viewControllers indexOfObject:currentVC];
+            NSInteger index = [self.viewControllers indexOfObject:currentVC];
             
             if (index>0) {
                 

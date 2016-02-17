@@ -81,7 +81,13 @@
     
     self.CFView.frame = CGRectMake(0, 0, 1024, 768);
     
+ 
 
+    UIImageView * viewiPhone =  [[UIImageView alloc]initWithFrame:CGRectMake(350, 20, 300,700)];
+    
+    UIImage*img =[UIImage imageNamed:@"手机镂空图.png"];
+    [viewiPhone setBackgroundColor:[UIColor colorWithPatternImage:img]];
+    [self.CFView addSubview:viewiPhone];
 
 
     CoverFlowView *coverFlowView = [CoverFlowView coverFlowViewWithFrame:self.view.frame andImages:_sourceImages sideImageCount:3 sideImageScale:0.5 middleImageScale:0.90];
@@ -96,18 +102,6 @@
 
     
 }
-
-
--(void)dealTap:(UITapGestureRecognizer *)tap
-{
-    
-    
-    SecondViewController * webVC = [[SecondViewController alloc] initViewController];
-    [self.navigationController pushViewController:webVC animated:YES];
-    
-    
-}
-
 
 
 - (BOOL)shouldAutorotate

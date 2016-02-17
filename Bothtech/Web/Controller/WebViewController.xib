@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="562" height="583"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Appgai.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="edj-Af-aBB">
+                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home02.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="edj-Af-aBB">
                     <rect key="frame" x="0.0" y="0.0" width="562" height="583"/>
                 </imageView>
             </subviews>
@@ -31,6 +31,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Appgai.jpg" width="1024" height="768"/>
+        <image name="home02.jpg" width="1024" height="768"/>
     </resources>
 </document>

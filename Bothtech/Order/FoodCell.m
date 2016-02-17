@@ -14,9 +14,7 @@
 - (void)awakeFromNib {
     // Initialization code
   
-    
-    
-   
+
     
     
     self.amount = 0;

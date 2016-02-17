@@ -16,7 +16,11 @@
 #import "OrderViewController.h"
 #import "BrandViewController.h"
 #import "ProfileViewController.h"
-#import "cccViewController.h"
+#import "AJKMainViewController.h"
+#import "MapViewController.h"
+#import "AppViewController.h"
+#import "SfViewController.h"
+#import "BrandMainViewController.h"
 
 
 #import "PopMenu.h"
@@ -29,6 +33,8 @@
 @property (nonatomic,strong) UIWebView * gifImage;
 
 
+@property (nonatomic ,strong) UIView * vivo;
+@property (nonatomic ,strong) UIView * Setview;
 
 - (IBAction)pushViewController:(id)sender;
 
@@ -87,8 +93,6 @@
         [_gifImage loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
         [self.iconView addSubview:_gifImage];
 
-        
-        
     }
     return _gifImage;
 }
@@ -99,21 +103,14 @@
 {
     [super viewDidLoad];
     
- 
     
-  //  [self gifImage];
-    
- 
     [self.navigationController setNavigationBarHidden:YES];
-    
-
-    
-    
-    
+  
     [self showButton];
-
     
 }
+
+
 
 //GCD延迟执行方法
 - (void)showButton{
@@ -123,10 +120,13 @@
     __block __weak ViewController* bself = self;
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+
     
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
         [bself showMenu];
+        
+        
     });
     
     
@@ -155,21 +155,20 @@
 
 - (void)showMenu {
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:4];
-    
-    NSLog(@"弹出动画");
+
     
     MenuItem *menuItem = [MenuItem itemWithTitle:@"网站建设" iconName:@"post_type_bubble_www2"];
     [items addObject:menuItem];
     
-    menuItem = [MenuItem itemWithTitle:@"H5" iconName:@"post_type_bubble_H53" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
+    menuItem = [MenuItem itemWithTitle:@"互动营销" iconName:@"post_type_bubble_H53" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
     [items addObject:menuItem];
     
     
-    menuItem = [MenuItem itemWithTitle:@"App" iconName:@"post_type_bubble_App1" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
+    menuItem = [MenuItem itemWithTitle:@"移动应用" iconName:@"post_type_bubble_App1" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
     [items addObject:menuItem];
     
     
-    menuItem = [MenuItem itemWithTitle:@"OA" iconName:@"post_type_bubble_5" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
+    menuItem = [MenuItem itemWithTitle:@"软件开发" iconName:@"post_type_bubble_5" glowColor:[UIColor colorWithRed:0.258 green:0.245 blue:0.687 alpha:0.000]];
     [items addObject:menuItem];
     
     
@@ -191,26 +190,55 @@
     
     if (!_popMenu) {
         _popMenu = [[PopMenu alloc] initWithFrame:self.view.bounds items:items];
+
+
         _popMenu.menuAnimationType = kPopMenuAnimationTypeNetEase;
+
     }
     if (_popMenu.isShowed) {
+
         return;
     }
     _popMenu.didSelectedItemCompletion = ^(MenuItem *selectedItem) {
         NSLog(@"%@",selectedItem.title);
-        if ([selectedItem.title  isEqual: @"App"]) {
+        if ([selectedItem.title  isEqual: @"移动应用"]) {
             
-            SecondViewController *secondVC = [[SecondViewController alloc] initViewController];
-            [self.navigationController pushViewController:secondVC animated:YES];
+            
+        AppViewController * appVC = [[AppViewController alloc]initViewController];
+        [self.navigationController pushViewController:appVC animated:YES];
 
             
         }
+//
+//        if ([selectedItem.title  isEqual: @"移动应用"]) {
+//            
+//            
+//            SecondViewController * appVC = [[SecondViewController alloc]initViewController];
+//            [self.navigationController pushViewController:appVC animated:YES];
+//            
+//            
+//        }
+
+        
         if ([selectedItem.title  isEqual: @"公司位置"]) {
-            BMKMapViewController * mapVC = [[BMKMapViewController alloc] initViewController];
-            [self.navigationController pushViewController:mapVC animated:YES];
+
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                        @"渔阳置业大厦",@"address",
+                                        @"北京市",@"city",
+                                        @"google",@"from_map_type",
+                                        @"39.9795652801",@"google_lat",
+                                        @"116.4088600554",@"google_lng",
+                                        @"朝阳区",@"region", nil];
+            
+            
+            MapViewController *mv = [[MapViewController alloc] init];
+            mv.navDic = dic;
+            mv.mapType = RegionNavi;
+            [self.navigationController pushViewController:mv animated:YES];
+
         }
         
-        if ([selectedItem.title  isEqual: @"H5"]) {
+        if ([selectedItem.title  isEqual: @"互动营销"]) {
             H5SecondViewController * H5 = [[H5SecondViewController alloc] initViewController];
             [self.navigationController pushViewController:H5 animated:YES];
         }
@@ -225,19 +253,27 @@
             OrderViewController * ordarVC = [[OrderViewController alloc] initViewController];
             [self.navigationController pushViewController:ordarVC animated:YES];
         }
+//        if ([selectedItem.title  isEqual: @"品牌设计"]) {
+//            BrandViewController * brandVC = [[BrandViewController alloc] initViewController];
+//            [self.navigationController pushViewController:brandVC animated:YES];
+//        }
         if ([selectedItem.title  isEqual: @"品牌设计"]) {
-            BrandViewController * brandVC = [[BrandViewController alloc] initViewController];
+            BrandMainViewController * brandVC = [[BrandMainViewController alloc] initViewController];
             [self.navigationController pushViewController:brandVC animated:YES];
         }
+
         if ([selectedItem.title  isEqual: @"关于我们"]) {
             ProfileViewController * profileVC = [[ProfileViewController alloc]initViewController];
             [self.navigationController pushViewController:profileVC animated:YES];
         }
+        if ([selectedItem.title  isEqual: @"软件开发"]) {
+            SfViewController *softVC = [[SfViewController alloc]initViewController];
+            [self.navigationController pushViewController:softVC animated:YES];
+        }
         
-
-
     };
     
+
     [_popMenu showMenuAtView:self.view];
     
     //    [_popMenu showMenuAtView:self.view startPoint:CGPointMake(CGRectGetWidth(self.view.bounds) - 60, CGRectGetHeight(self.view.bounds)) endPoint:CGPointMake(60, CGRectGetHeight(self.view.bounds))];
@@ -246,21 +282,29 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [self showMenu];
     
+    
+//    //渐变
+//    self.iconView.alpha = 0.5;
+//    [UIView beginAnimations:@"" context:nil];
+//    [UIView setAnimationDuration:1.0];
+//    self.iconView.alpha = 1;
+//    [UIView commitAnimations];
+//    
+//    [self.iconView setBackgroundColor:[UIColor colorWithPatternImage: [UIImage imageNamed:@"QQ.png"]]];
 
+ 
+//    UIImageView *  uuu = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 1024, 768)];
+//    [uuu setImage:[UIImage imageNamed:@"home02.jpg"]];
+//    [self.view addSubview:uuu];
+    
+    
+    
 }
 
-//
-//- (void)butClick
-//{
-//    [self showMenu];
-//    
-//    NSLog(@"123");
-//
-//}
+
 
 - (void)dealloc {
     NSLog(@"dealloc");
-   
    
   
 }
