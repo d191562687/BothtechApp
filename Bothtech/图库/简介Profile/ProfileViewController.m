@@ -50,9 +50,18 @@
     [self.view addSubview:buttonImage];
     
 
-    UIImageView * companyImage = [[UIImageView alloc]initWithFrame:CGRectMake(30, 390, 540, 349)];
-    [companyImage setImage:[UIImage imageNamed:@"公司图片@2x.png"]];
-    [self.view addSubview:companyImage];
+//    UIImageView * companyImage = [[UIImageView alloc]initWithFrame:CGRectMake(30, 390, 540, 349)];
+//    [companyImage setImage:[UIImage imageNamed:@"公司图片@2x.png"]];
+//    [self.view addSubview:companyImage];
+    FLAdView * adView = [[FLAdView alloc]initWithFrame:CGRectMake(30, 390, 540, 349)];
+    adView.imageArray = @[@"OfficeImage1.jpg",@"OfficeImage2.jpg",@"OfficeImage3.jpg",@"OfficeImage4.jpg",@"OfficeImage5.jpg"];
+    adView.location = PageControlCenter;
+    adView.currentPageColor = [UIColor clearColor];
+    adView.normalColor = [UIColor clearColor];
+    adView.chageTime = 3.0f;
+    adView.flDelegate = self;
+    [self.view addSubview:adView];
+    
     
 
     UILabel * topLable = [[UILabel alloc]initWithFrame:CGRectMake(70, 70, 300, 30)];

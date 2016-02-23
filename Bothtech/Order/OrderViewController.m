@@ -69,35 +69,35 @@
     
     NSDictionary *dic1 = @{@"id": @9323283,
                            @"name": @"品牌设计",
-                           @"min_price": @1800.0,
+                           @"min_price": @20000.0,
                            @"praise_num": @11,
                            @"picture":@"1.png",
                            @"month_saled":@"A"};
     
     NSDictionary *dic2 = @{@"id": @9323284,
                            @"name": @"网站建设",
-                           @"min_price": @5800.0,
+                           @"min_price": @6000.0,
                            @"praise_num": @6,
                            @"picture":@"2.png",
                            @"month_saled":@"B"};
     
     NSDictionary *dic3 = @{@"id": @9323285,
                            @"name": @"移动应用",
-                           @"min_price": @58000.0,
+                           @"min_price": @20000.0,
                            @"praise_num": @8,
                            @"picture":@"3.png",
                            @"month_saled":@"C"};
     
     NSDictionary *dic4 = @{@"id": @26844943,
                            @"name": @"互动营销",
-                           @"min_price": @4800.0,
+                           @"min_price": @5000.0,
                            @"praise_num": @1,
                            @"picture":@"4.png",
                            @"month_saled":@"D"};
     
     NSDictionary *dic5 = @{@"id": @9323279,
                            @"name": @"软件开发",
-                           @"min_price": @58000.0,
+                           @"min_price": @20000.0,
                            @"praise_num": @11,
                            @"picture":@"5.png",
                            @"month_saled":@"E"};

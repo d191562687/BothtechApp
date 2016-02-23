@@ -13,6 +13,6 @@
 
 @property (nonatomic,retain) NSMutableArray *imageArray;
 
-- (id)initViewController;
+//- (id)initViewController;
 
 @end

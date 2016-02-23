@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RCDraggableButton.h"
+#import "FLAdView.h"
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController<FLAdViewDelegate>
 
 - (id)initViewController;
 
